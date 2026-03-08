@@ -1,0 +1,677 @@
+{
+  "metadata": {
+    "title": "IT & AI Fundamentals — Guia de Estudo: Perguntas e Respostas",
+    "certification": "IT & AI Fundamentals Associate",
+    "source": "Sample Question Bank — Vendor-Neutral",
+    "format": "Perguntas e alternativas em inglês. Explicações disponíveis em inglês e português (pt-br).",
+    "total_questions": 20,
+    "simulados": [
+      {
+        "number": 1,
+        "range": "1-10",
+        "questions": 10
+      },
+      {
+        "number": 2,
+        "range": "11-20",
+        "questions": 10
+      }
+    ],
+    "domains": [
+      {
+        "name": "AI & Machine Learning Fundamentals",
+        "count": 8
+      },
+      {
+        "name": "Cloud & Infrastructure",
+        "count": 7
+      },
+      {
+        "name": "Data Management",
+        "count": 5
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "simulado": 1,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "Which type of machine learning uses labeled training data to teach a model to map inputs to known outputs?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Unsupervised learning",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Reinforcement learning",
+          "is_correct": false
+        },
+        {
+          "letter": "C",
+          "text": "Supervised learning",
+          "is_correct": true
+        },
+        {
+          "letter": "D",
+          "text": "Self-supervised learning",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "C",
+      "explanation_en": "Supervised learning requires a labeled dataset where each input has a corresponding known output. The model learns to predict outputs for new inputs by minimizing the error between its predictions and the ground-truth labels during training.",
+      "explanation_ptbr": "O aprendizado supervisionado requer um conjunto de dados rotulado, onde cada entrada possui uma saída conhecida correspondente. O modelo aprende a prever saídas para novas entradas minimizando o erro entre suas previsões e os rótulos reais durante o treinamento.",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "simulado": 1,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "What term describes the situation where a machine learning model performs very well on training data but poorly on unseen data?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Underfitting",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Overfitting",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Regularization",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Bias-variance trade-off",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Overfitting occurs when a model memorizes the training data too closely, capturing noise and random fluctuations as if they were meaningful patterns. This causes the model to lose its ability to generalize to new, unseen examples. Common mitigations include dropout, regularization, and using more training data.",
+      "explanation_ptbr": "O overfitting ocorre quando um modelo memoriza os dados de treinamento de forma muito precisa, capturando ruído e flutuações aleatórias como se fossem padrões significativos. Isso faz com que o modelo perca a capacidade de generalizar para novos exemplos. Mitigações comuns incluem dropout, regularização e uso de mais dados de treinamento.",
+      "note": ""
+    },
+    {
+      "id": 3,
+      "simulado": 1,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "In a neural network, what is the role of an activation function?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "To initialize the weights of the network before training",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "To compute the loss between predicted and actual values",
+          "is_correct": false
+        },
+        {
+          "letter": "C",
+          "text": "To introduce non-linearity, enabling the network to learn complex patterns",
+          "is_correct": true
+        },
+        {
+          "letter": "D",
+          "text": "To normalize input data before it enters the network",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "C",
+      "explanation_en": "Activation functions introduce non-linearity into a neural network. Without them, stacking multiple layers would be mathematically equivalent to a single linear transformation, severely limiting the kinds of patterns the network can learn. Common examples include ReLU, sigmoid, and tanh.",
+      "explanation_ptbr": "Funções de ativação introduzem não-linearidade em uma rede neural. Sem elas, empilhar várias camadas seria matematicamente equivalente a uma única transformação linear, limitando severamente os tipos de padrões que a rede pode aprender. Exemplos comuns incluem ReLU, sigmoide e tanh.",
+      "note": ""
+    },
+    {
+      "id": 4,
+      "simulado": 1,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "What does one training 'epoch' represent in the context of model training?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "A single forward pass through one training sample",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "One complete pass through the entire training dataset",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "The total duration, in seconds, of the training run",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "The number of layers updated in a single gradient step",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "An epoch is one complete iteration over the entire training dataset. Training typically runs for many epochs so that the model can progressively refine its parameters. The number of epochs is a hyperparameter that must be tuned to avoid underfitting or overfitting.",
+      "explanation_ptbr": "Uma época é uma iteração completa sobre todo o conjunto de dados de treinamento. O treinamento geralmente é executado por muitas épocas para que o modelo possa refinar seus parâmetros progressivamente. O número de épocas é um hiperparâmetro que deve ser ajustado para evitar underfitting ou overfitting.",
+      "note": ""
+    },
+    {
+      "id": 5,
+      "simulado": 1,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "What is the primary purpose of gradient descent in model training?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "To split the training data into batches of equal size",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "To iteratively adjust model weights in order to minimize the loss function",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "To increase the learning rate when the loss plateaus",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "To evaluate model performance on the validation set",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Gradient descent is an optimization algorithm that computes the gradient (partial derivatives) of the loss function with respect to each model parameter, then updates the parameters in the direction that reduces the loss. Variants such as SGD, Adam, and RMSProp differ in how they compute and apply these updates.",
+      "explanation_ptbr": "O gradiente descendente é um algoritmo de otimização que calcula o gradiente (derivadas parciais) da função de perda em relação a cada parâmetro do modelo e, em seguida, atualiza os parâmetros na direção que reduz a perda. Variantes como SGD, Adam e RMSProp diferem na forma como calculam e aplicam essas atualizações.",
+      "note": ""
+    },
+    {
+      "id": 6,
+      "simulado": 1,
+      "domain": "Cloud & Infrastructure",
+      "question": "What is horizontal scaling (scaling out) in the context of a distributed system?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Increasing the CPU and RAM of an existing server",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Adding more server instances to distribute the workload",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Replacing spinning disks with solid-state drives to reduce latency",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Moving workloads from on-premises hardware to a cloud provider",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Horizontal scaling means adding more machines (nodes) to a system to share the load, as opposed to vertical scaling which upgrades the resources of a single machine. Horizontal scaling improves fault tolerance and allows near-linear throughput growth but requires distributed coordination.",
+      "explanation_ptbr": "Escalonamento horizontal significa adicionar mais máquinas (nós) a um sistema para compartilhar a carga, ao contrário do escalonamento vertical, que aumenta os recursos de uma única máquina. O escalonamento horizontal melhora a tolerância a falhas e permite crescimento de throughput quase linear, mas exige coordenação distribuída.",
+      "note": ""
+    },
+    {
+      "id": 7,
+      "simulado": 1,
+      "domain": "Cloud & Infrastructure",
+      "question": "What is the primary function of a load balancer in a web application architecture?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "To encrypt traffic between the client and the server",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "To persist session state across multiple application servers",
+          "is_correct": false
+        },
+        {
+          "letter": "C",
+          "text": "To distribute incoming requests evenly across multiple server instances",
+          "is_correct": true
+        },
+        {
+          "letter": "D",
+          "text": "To compress outbound responses to reduce bandwidth consumption",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "C",
+      "explanation_en": "A load balancer sits in front of a pool of servers and distributes incoming client requests across them according to a chosen algorithm (round-robin, least connections, IP hash, etc.). This prevents any single server from becoming a bottleneck and improves availability.",
+      "explanation_ptbr": "Um balanceador de carga fica à frente de um pool de servidores e distribui as requisições dos clientes entre eles de acordo com um algoritmo escolhido (round-robin, menor número de conexões, hash de IP, etc.). Isso evita que um único servidor se torne um gargalo e melhora a disponibilidade.",
+      "note": ""
+    },
+    {
+      "id": 8,
+      "simulado": 1,
+      "domain": "Cloud & Infrastructure",
+      "question": "Which concept describes packaging an application together with all its dependencies and configuration so that it runs consistently across different environments?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Virtualization",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Containerization",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Microservices",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Serverless computing",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Containerization packages the application code, runtime, libraries, and configuration into a self-contained image. Containers share the host OS kernel but are isolated from each other, making them lighter than full virtual machines while still ensuring environment consistency from development through production.",
+      "explanation_ptbr": "A containerização empacota o código da aplicação, o runtime, as bibliotecas e a configuração em uma imagem autossuficiente. Contêineres compartilham o kernel do SO do host, mas são isolados entre si, tornando-os mais leves do que máquinas virtuais completas e garantindo consistência de ambiente do desenvolvimento à produção.",
+      "note": ""
+    },
+    {
+      "id": 9,
+      "simulado": 1,
+      "domain": "Data Management",
+      "question": "In data engineering, what does the acronym ETL stand for, and what does it describe?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Encode, Transfer, Load — the process of compressing data before moving it between systems",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Extract, Transform, Load — a pipeline that moves and reshapes data from sources into a target store",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Evaluate, Test, Launch — the steps for deploying a data model into production",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Encrypt, Tokenize, Log — a data security workflow for protecting sensitive records",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "ETL (Extract, Transform, Load) is the standard process for integrating data from source systems. Extraction pulls raw data, transformation cleans, filters, and reshapes it according to business rules, and loading writes the result into a destination such as a data warehouse or analytical database.",
+      "explanation_ptbr": "ETL (Extrair, Transformar, Carregar) é o processo padrão para integrar dados de sistemas de origem. A extração coleta dados brutos, a transformação os limpa, filtra e reformata de acordo com regras de negócio, e o carregamento grava o resultado em um destino como um data warehouse ou banco de dados analítico.",
+      "note": ""
+    },
+    {
+      "id": 10,
+      "simulado": 1,
+      "domain": "Data Management",
+      "question": "What is the main benefit of partitioning a large database table?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "It automatically encrypts each partition with a unique key",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "It improves query performance and manageability by dividing data into smaller, more manageable segments",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "It enforces referential integrity between tables in the same schema",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "It removes the need for indexes on frequently queried columns",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Partitioning divides a large table into smaller physical or logical segments based on a partition key (e.g., date, region). Queries that filter on the partition key only scan relevant segments, dramatically reducing I/O. Partitioning also simplifies archiving and deletion of older data.",
+      "explanation_ptbr": "O particionamento divide uma tabela grande em segmentos físicos ou lógicos menores com base em uma chave de partição (ex.: data, região). Consultas que filtram pela chave de partição escaneiam apenas os segmentos relevantes, reduzindo drasticamente a E/S. O particionamento também simplifica o arquivamento e a exclusão de dados mais antigos.",
+      "note": ""
+    },
+    {
+      "id": 11,
+      "simulado": 2,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "What is transfer learning, and what is its main advantage?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Training a new model from scratch on a large proprietary dataset to achieve state-of-the-art accuracy",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Moving a trained model from a development environment to a production server",
+          "is_correct": false
+        },
+        {
+          "letter": "C",
+          "text": "Reusing the weights of a pre-trained model as a starting point for a new, related task",
+          "is_correct": true
+        },
+        {
+          "letter": "D",
+          "text": "Sharing gradient updates between multiple models training simultaneously",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "C",
+      "explanation_en": "Transfer learning leverages knowledge already encoded in a model trained on a large dataset. By fine-tuning only a subset of layers on task-specific data, practitioners can achieve strong results with far less labeled data and compute than training from scratch.",
+      "explanation_ptbr": "O transfer learning aproveita o conhecimento já codificado em um modelo treinado em um grande conjunto de dados. Ao ajustar apenas um subconjunto de camadas em dados específicos da tarefa, é possível obter bons resultados com muito menos dados rotulados e poder computacional do que treinar do zero.",
+      "note": ""
+    },
+    {
+      "id": 12,
+      "simulado": 2,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "Which metric is most appropriate for evaluating a binary classification model on a highly imbalanced dataset where false negatives are especially costly?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Accuracy",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Recall (Sensitivity)",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Specificity",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Mean Squared Error",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Recall measures the proportion of actual positives correctly identified (TP / (TP + FN)). When false negatives carry high cost — for example, missing a disease diagnosis — maximizing recall is critical. Accuracy is misleading on imbalanced data because a model that predicts the majority class always can still achieve high accuracy.",
+      "explanation_ptbr": "O recall mede a proporção de positivos reais identificados corretamente (VP / (VP + FN)). Quando os falsos negativos têm alto custo — por exemplo, não detectar um diagnóstico de doença — maximizar o recall é fundamental. A acurácia é enganosa em dados desbalanceados porque um modelo que sempre prevê a classe majoritária pode obter alta acurácia.",
+      "note": ""
+    },
+    {
+      "id": 13,
+      "simulado": 2,
+      "domain": "AI & Machine Learning Fundamentals",
+      "question": "What distinguishes a hyperparameter from a model parameter?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Hyperparameters are learned from data during training; model parameters are set manually before training",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Hyperparameters control the training process and architecture; model parameters are learned from training data",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Hyperparameters only apply to deep learning models; model parameters apply to all model types",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "There is no practical distinction — both terms refer to the weights of a neural network",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Model parameters (weights and biases) are learned automatically through optimization during training. Hyperparameters — such as learning rate, batch size, number of layers, and regularization strength — are set before training begins and control how the learning process itself works. They are typically tuned via search strategies such as grid search or Bayesian optimization.",
+      "explanation_ptbr": "Os parâmetros do modelo (pesos e vieses) são aprendidos automaticamente por otimização durante o treinamento. Os hiperparâmetros — como taxa de aprendizado, tamanho do lote, número de camadas e força de regularização — são definidos antes do treinamento e controlam como o processo de aprendizado funciona. Eles são tipicamente ajustados via grid search ou otimização bayesiana.",
+      "note": ""
+    },
+    {
+      "id": 14,
+      "simulado": 2,
+      "domain": "Cloud & Infrastructure",
+      "question": "What does 'high availability' mean in the context of system design?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "The system processes requests with sub-millisecond latency under all conditions",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "The system is designed to remain operational and accessible for the maximum possible percentage of time",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "The system automatically scales to handle any traffic volume without configuration changes",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "The system stores multiple copies of data across geographically separated regions",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "High availability (HA) refers to designing a system to minimize downtime, typically expressed as a percentage of uptime (e.g., 99.9% or 'three nines'). HA architectures eliminate single points of failure through redundancy, automatic failover, and health monitoring.",
+      "explanation_ptbr": "Alta disponibilidade (HA) refere-se a projetar um sistema para minimizar o tempo de inatividade, tipicamente expresso como uma porcentagem de tempo ativo (ex.: 99,9% ou 'três noves'). Arquiteturas de HA eliminam pontos únicos de falha por meio de redundância, failover automático e monitoramento de saúde.",
+      "note": ""
+    },
+    {
+      "id": 15,
+      "simulado": 2,
+      "domain": "Cloud & Infrastructure",
+      "question": "What is Infrastructure as Code (IaC)?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "A billing model in which cloud resources are charged only when executing code",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "A practice of managing and provisioning infrastructure through machine-readable configuration files rather than manual processes",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "An approach where application code is embedded directly into hardware firmware",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "A method of encrypting infrastructure configuration to prevent unauthorized changes",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Infrastructure as Code (IaC) treats infrastructure provisioning the same way software is handled: written in files, versioned in source control, and applied through automated pipelines. This enables repeatability, auditability, and rapid environment creation or teardown.",
+      "explanation_ptbr": "A Infraestrutura como Código (IaC) trata o provisionamento de infraestrutura da mesma forma que o software: escrito em arquivos, versionado em controle de versão e aplicado por pipelines automatizados. Isso permite repetibilidade, auditabilidade e criação ou destruição rápida de ambientes.",
+      "note": ""
+    },
+    {
+      "id": 16,
+      "simulado": 2,
+      "domain": "Cloud & Infrastructure",
+      "question": "What is the difference between latency and throughput in a network or system context?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Latency measures the total data transferred per day; throughput measures the delay per packet",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Latency is the time delay for a single operation to complete; throughput is the number of operations completed per unit of time",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Latency and throughput are the same metric expressed in different units",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Latency measures CPU utilization; throughput measures memory bandwidth",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Latency is the end-to-end delay experienced by a single request or operation, commonly measured in milliseconds. Throughput is the aggregate rate at which a system completes work, measured in requests per second or bytes per second. Optimizing one often involves trade-offs with the other.",
+      "explanation_ptbr": "Latência é o atraso de ponta a ponta experimentado por uma única requisição ou operação, comumente medido em milissegundos. Throughput é a taxa agregada com que um sistema conclui trabalho, medido em requisições por segundo ou bytes por segundo. Otimizar um frequentemente envolve compensações com o outro.",
+      "note": ""
+    },
+    {
+      "id": 17,
+      "simulado": 2,
+      "domain": "Cloud & Infrastructure",
+      "question": "Which auto-scaling strategy adds or removes compute instances based on observed metrics such as CPU utilization or request rate?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Scheduled scaling",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Manual scaling",
+          "is_correct": false
+        },
+        {
+          "letter": "C",
+          "text": "Dynamic (reactive) scaling",
+          "is_correct": true
+        },
+        {
+          "letter": "D",
+          "text": "Predictive scaling",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "C",
+      "explanation_en": "Dynamic (reactive) scaling monitors real-time metrics and automatically adjusts the number of instances when thresholds are crossed. Scheduled scaling adjusts capacity at pre-defined times. Predictive scaling uses historical patterns to forecast future demand. Manual scaling requires an operator to make changes explicitly.",
+      "explanation_ptbr": "O escalonamento dinâmico (reativo) monitora métricas em tempo real e ajusta automaticamente o número de instâncias quando os limites são ultrapassados. O escalonamento agendado ajusta a capacidade em horários predefinidos. O escalonamento preditivo usa padrões históricos para prever a demanda futura. O escalonamento manual exige que um operador faça alterações explicitamente.",
+      "note": ""
+    },
+    {
+      "id": 18,
+      "simulado": 2,
+      "domain": "Data Management",
+      "question": "What is the key difference between structured and unstructured data?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "Structured data is stored on-premises; unstructured data is always stored in the cloud",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "Structured data is organized in a predefined schema (e.g., rows and columns); unstructured data has no predefined format",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "Structured data can only be queried with SQL; unstructured data requires NoSQL",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "Structured data is immutable; unstructured data supports updates",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Structured data conforms to a schema — typically rows and columns in a relational database — making it easy to query with SQL. Unstructured data (images, audio, free text, video) lacks a predefined schema and requires specialized processing pipelines. Semi-structured data (JSON, XML) sits between both extremes.",
+      "explanation_ptbr": "Dados estruturados estão em conformidade com um esquema — tipicamente linhas e colunas em um banco de dados relacional — facilitando consultas com SQL. Dados não estruturados (imagens, áudio, texto livre, vídeo) não possuem um esquema predefinido e requerem pipelines de processamento especializados. Dados semiestruturados (JSON, XML) ficam entre os dois extremos.",
+      "note": ""
+    },
+    {
+      "id": 19,
+      "simulado": 2,
+      "domain": "Data Management",
+      "question": "What is the purpose of data normalization in a relational database design?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "To distribute data across multiple physical servers for horizontal scaling",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "To reduce redundancy and improve data integrity by organizing data into related tables",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "To compress data so it occupies less storage space",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "To convert all numeric columns to a common scale for analytical queries",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Database normalization is the process of structuring a relational schema to reduce data duplication and prevent update anomalies. It is usually carried out through Normal Forms (1NF, 2NF, 3NF, BCNF). While normalization improves consistency and storage efficiency, highly normalized schemas can require more joins and may be denormalized for analytical workloads.",
+      "explanation_ptbr": "A normalização de banco de dados é o processo de estruturar um esquema relacional para reduzir a duplicação de dados e prevenir anomalias de atualização. É geralmente realizada por meio das Formas Normais (1FN, 2FN, 3FN, FNBC). Embora a normalização melhore a consistência e a eficiência de armazenamento, esquemas altamente normalizados podem exigir mais joins e podem ser desnormalizados para workloads analíticos.",
+      "note": ""
+    },
+    {
+      "id": 20,
+      "simulado": 2,
+      "domain": "Data Management",
+      "question": "In the context of a data pipeline, what does 'data lineage' refer to?",
+      "alternatives": [
+        {
+          "letter": "A",
+          "text": "The physical path data travels through network switches before reaching storage",
+          "is_correct": false
+        },
+        {
+          "letter": "B",
+          "text": "The chronological record of data's origin, transformations, and movement through systems",
+          "is_correct": true
+        },
+        {
+          "letter": "C",
+          "text": "The access control list that defines who can read or modify a dataset",
+          "is_correct": false
+        },
+        {
+          "letter": "D",
+          "text": "The versioning system used to track changes to database schemas over time",
+          "is_correct": false
+        }
+      ],
+      "correct_answer": "B",
+      "explanation_en": "Data lineage documents the full journey of data: where it originated, what transformations were applied, when and by which processes, and where it was stored or consumed. It is essential for debugging pipeline errors, regulatory compliance, impact analysis, and building trust in analytical results.",
+      "explanation_ptbr": "A linhagem de dados documenta toda a jornada dos dados: de onde se originaram, quais transformações foram aplicadas, quando e por quais processos, e onde foram armazenados ou consumidos. É essencial para depurar erros de pipeline, conformidade regulatória, análise de impacto e construção de confiança nos resultados analíticos.",
+      "note": ""
+    }
+  ]
+}
