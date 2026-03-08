@@ -1,0 +1,1425 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.xctest/Contents/MacOS/ExamSimulatorPackageTests",
+      "packagePath" : "/Users/alexandre/Certificações/Simulador",
+      "productName" : "ExamSimulatorPackageTests"
+    }
+  ],
+  "copyCommands" : {
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator_ExamSimulator.bundle/AppConfig.json" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Resources/AppConfig.json"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator_ExamSimulator.bundle/AppConfig.json"
+        }
+      ]
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator_ExamSimulator.bundle/Languages" : {
+      "inputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Resources/Languages"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator_ExamSimulator.bundle/Languages"
+        }
+      ]
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator_ExamSimulator.bundle/QAs" : {
+      "inputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Resources/QAs"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "directory",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator_ExamSimulator.bundle/QAs"
+        }
+      ]
+    }
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.ExamSimulator-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/sources",
+      "importPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/AppDependencies.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/ExamSimulatorApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/AlternativeRow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/DomainStatRow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/QuestionNavigatorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/TimerView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ExamViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ReviewViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ExamView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ResultView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ReviewView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/SessionConfigSheet.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/StudyView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<ExamSimulator-arm64-apple-macosx26.0-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "ExamSimulator",
+      "moduleOutputPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulator.swiftmodule",
+      "objects" : [
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AppDependencies.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamSimulatorApp.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AlternativeRow.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DomainStatRow.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/QuestionNavigatorView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/TimerView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamViewModel.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewViewModel.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ResultView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/SessionConfigSheet.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+        "-module-cache-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "ExamSimulator_main",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "simulador"
+      ],
+      "outputFileMapPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AppDependencies.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamSimulatorApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AlternativeRow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DomainStatRow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/QuestionNavigatorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/TimerView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ResultView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/SessionConfigSheet.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulator.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/AppDependencies.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/ExamSimulatorApp.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/AlternativeRow.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/DomainStatRow.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/QuestionNavigatorView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/TimerView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ExamViewModel.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ReviewViewModel.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ExamView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ResultView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ReviewView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/SessionConfigSheet.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/StudyView.swift",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExamSimulatorCore-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/sources",
+      "importPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Engine/ExamEngine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/AppConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamBank.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamSession.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/Question.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/SessionResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/UserProgress.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/ExamBank/ExamBankRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/Progress/ProgressRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/AIProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/MockAIProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Configuration/AppConfigService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Localization/LocalizationService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Utilities/Extensions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExamSimulatorCore",
+      "moduleOutputPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCore.swiftmodule",
+      "objects" : [
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamEngine.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfig.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBank.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamSession.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Question.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/SessionResult.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/UserProgress.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBankRepository.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ProgressRepository.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AIProvider.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/MockAIProvider.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfigService.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/LocalizationService.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Extensions.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/include/ExamSimulatorCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "simulador"
+      ],
+      "outputFileMapPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamEngine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBank.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamSession.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Question.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/SessionResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/UserProgress.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBankRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ProgressRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AIProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/MockAIProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfigService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/LocalizationService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Extensions.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Engine/ExamEngine.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/AppConfig.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamBank.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamSession.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/Question.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/SessionResult.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/UserProgress.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/ExamBank/ExamBankRepository.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/Progress/ProgressRepository.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/AIProvider.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/MockAIProvider.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Configuration/AppConfigService.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Localization/LocalizationService.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Utilities/Extensions.swift"
+      ],
+      "tempsPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExamSimulatorCoreTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/sources",
+      "importPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamBankTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamEngineTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExamSimulatorCoreTests",
+      "moduleOutputPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCoreTests.swiftmodule",
+      "objects" : [
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "simulador"
+      ],
+      "outputFileMapPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamBankTests.swift",
+        "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamEngineTests.swift"
+      ],
+      "tempsPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.ExamSimulatorPackageTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/sources",
+      "importPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "ExamSimulatorPackageTests",
+      "moduleOutputPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/include/ExamSimulatorPackageTests-Swift.h",
+        "-I",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-L",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-plugin-path",
+        "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "simulador"
+      ],
+      "outputFileMapPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules/ExamSimulatorPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "ExamSimulator" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "ExamSimulator",
+      "-package-name",
+      "simulador",
+      "-c",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/AppDependencies.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/ExamSimulatorApp.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/AlternativeRow.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/DomainStatRow.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/QuestionNavigatorView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/TimerView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ExamViewModel.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ReviewViewModel.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ExamView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ResultView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ReviewView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/SessionConfigSheet.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/StudyView.swift",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-module-cache-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "ExamSimulator_main",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "simulador",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "ExamSimulatorCore" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "ExamSimulatorCore",
+      "-package-name",
+      "simulador",
+      "-c",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Engine/ExamEngine.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/AppConfig.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamBank.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamSession.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/Question.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/SessionResult.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/UserProgress.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/ExamBank/ExamBankRepository.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/Progress/ProgressRepository.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/AIProvider.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/MockAIProvider.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Configuration/AppConfigService.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Localization/LocalizationService.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Utilities/Extensions.swift",
+      "-I",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/include/ExamSimulatorCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "simulador",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "ExamSimulatorCoreTests" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "ExamSimulatorCoreTests",
+      "-package-name",
+      "simulador",
+      "-c",
+      "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamBankTests.swift",
+      "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamEngineTests.swift",
+      "-I",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "simulador",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ],
+    "ExamSimulatorPackageTests" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "ExamSimulatorPackageTests",
+      "-package-name",
+      "simulador",
+      "-c",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/include/ExamSimulatorPackageTests-Swift.h",
+      "-I",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-L",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-plugin-path",
+      "/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "simulador",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "ExamSimulator" : [
+      "ExamSimulatorCore"
+    ],
+    "ExamSimulatorCore" : [
+
+    ],
+    "ExamSimulatorCoreTests" : [
+      "ExamSimulatorCore"
+    ],
+    "ExamSimulatorPackageTests" : [
+      "ExamSimulatorCoreTests",
+      "ExamSimulatorCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator-entitlement.plist"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/AppDependencies.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/App/ExamSimulatorApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/AlternativeRow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/DomainStatRow.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/QuestionNavigatorView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/TimerView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ExamViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ReviewViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ExamView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ResultView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ReviewView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/SessionConfigSheet.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/StudyView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/sources"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AlternativeRow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AppDependencies.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DomainStatRow.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamSimulatorApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/QuestionNavigatorView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ResultView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/SessionConfigSheet.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/TimerView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AIProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfigService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBank.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBankRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamEngine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamSession.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Extensions.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/LocalizationService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/MockAIProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ProgressRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Question.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/SessionResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/UserProgress.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.product/Objects.LinkFileList"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Engine/ExamEngine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/AppConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamBank.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/ExamSession.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/Question.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/SessionResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Models/UserProgress.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/ExamBank/ExamBankRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Repositories/Progress/ProgressRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/AIProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/AI/MockAIProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Configuration/AppConfigService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Services/Localization/LocalizationService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulatorCore/Utilities/Extensions.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/sources"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamBankTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamEngineTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/sources"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/sources"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AIProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfig.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/AppConfigService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBank.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamBankRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamEngine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ExamSession.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Extensions.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/LocalizationService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/MockAIProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/ProgressRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/Question.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/SessionResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/UserProgress.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/runner.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+    }
+  }
+}

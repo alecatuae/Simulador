@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/master.swiftdeps"
+  },
+  "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamBankTests.swift": {
+    "dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.d",
+    "object": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.swift.o",
+    "swiftmodule": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.swiftdeps",
+    "diagnostics": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamBankTests.dia"
+  },
+  "/Users/alexandre/Certificações/Simulador/Tests/ExamSimulatorCoreTests/ExamEngineTests.swift": {
+    "dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.d",
+    "object": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.swift.o",
+    "swiftmodule": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.swiftdeps",
+    "diagnostics": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCoreTests.build/ExamEngineTests.dia"
+  }
+}

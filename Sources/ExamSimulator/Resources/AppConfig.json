@@ -1,0 +1,29 @@
+{
+  "appVersion": "1.0.0",
+  "defaultLanguage": "en-us",
+  "fallbackLanguage": "en-us",
+  "examDefaults": {
+    "timerMinutes": 90,
+    "passingScorePercent": 70.0,
+    "randomizeQuestions": true,
+    "randomizeAnswers": false
+  },
+  "aiProvider": {
+    "enabled": false,
+    "provider": "openai",
+    "baseURL": "https://api.openai.com/v1",
+    "model": "gpt-4o-mini",
+    "apiKeyEnvVar": "OPENAI_API_KEY"
+  },
+  "features": {
+    "studyMode": true,
+    "examMode": true,
+    "reviewMode": true,
+    "progressTracking": true,
+    "aiAssistant": false,
+    "bookmarks": true
+  },
+  "storage": {
+    "progressDirectory": "~/Library/Application Support/ExamSimulator"
+  }
+}
