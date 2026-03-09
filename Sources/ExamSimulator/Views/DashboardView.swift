@@ -14,11 +14,13 @@ struct DashboardView: View {
         case sessionConfig(SessionMode)
         case study(SessionContext)
         case exam(SessionContext)
+        case browse(ExamBank)
         var id: String {
             switch self {
             case .sessionConfig(let m): return "config-\(m.rawValue)"
             case .study: return "study"
             case .exam: return "exam"
+            case .browse: return "browse"
             }
         }
     }
@@ -71,6 +73,12 @@ struct DashboardView: View {
                     passingScore: deps.config.examDefaults.passingScorePercent
                 ))
                 .onDisappear { viewModel.reloadProgress() }
+            case .browse(let bank):
+                BrowseQuestionsView(
+                    viewModel: BrowseQuestionsViewModel(bank: bank, repository: deps.bankRepository)
+                )
+                .environmentObject(loc)
+                .onDisappear { viewModel.loadData() }
             }
         }
     }
@@ -178,8 +186,9 @@ struct DashboardView: View {
                 icon: "list.bullet",
                 color: .purple
             ) {
-                let ctx = viewModel.buildStudySession(filter: .all)
-                if let ctx { activeSheet = .study(ctx) }
+                if let bank = viewModel.selectedBank {
+                    activeSheet = .browse(bank)
+                }
             }
         }
     }

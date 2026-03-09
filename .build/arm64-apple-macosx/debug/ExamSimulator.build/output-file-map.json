@@ -44,6 +44,13 @@
     "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/TimerView.swiftdeps",
     "diagnostics": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/TimerView.dia"
   },
+  "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/BrowseQuestionsViewModel.swift": {
+    "dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.d",
+    "object": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.swift.o",
+    "swiftmodule": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel~partial.swiftmodule",
+    "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.swiftdeps",
+    "diagnostics": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.dia"
+  },
   "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift": {
     "dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.d",
     "object": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.swift.o",
@@ -71,6 +78,13 @@
     "swiftmodule": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel~partial.swiftmodule",
     "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.swiftdeps",
     "diagnostics": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.dia"
+  },
+  "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/BrowseQuestionsView.swift": {
+    "dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.d",
+    "object": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.swift.o",
+    "swiftmodule": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.swiftdeps",
+    "diagnostics": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.dia"
   },
   "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift": {
     "dependencies": "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardView.d",

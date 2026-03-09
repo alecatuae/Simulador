@@ -330,7 +330,7 @@ Actions:
 -   Start Exam (full timed simulation)
 -   Study Mode (question by question with explanations)
 -   Review Incorrect (filter to incorrect history)
--   Browse Questions (all questions, no scoring)
+-   Browse Questions (list + inline editor for all questions in the bank)
 
 ------------------------------------------------------------------------
 
@@ -361,6 +361,64 @@ When starting a session, the user selects:
 
 The sheet shows a live preview counter: "N of M questions".
 A "Use all (M)" shortcut resets the limit to nil.
+
+------------------------------------------------------------------------
+
+## Browse Questions
+
+`BrowseQuestionsView` opens as a full-window sheet from the Dashboard
+action button "Browse Questions". It provides a searchable, editable
+list of every question in the selected exam bank.
+
+### Layout
+
+-   **Toolbar (top bar)**
+    -   Back button (with discard-changes confirmation when dirty)
+    -   Bank certification + question count
+    -   "Unsaved changes" indicator (orange, visible when dirty)
+    -   Domain picker (filter list to one domain or All)
+    -   Search field (filters by question text, domain, or ID)
+    -   "Save" button (green, visible only when there are unsaved edits)
+
+-   **Question list** — each row shows:
+    -   `#id`  ·  Simulado badge  ·  Domain  ·  First ~2 lines of question text
+    -   Pencil icon on right to indicate tappable row
+    -   Orange left-border stripe when the row has unsaved edits
+
+-   Tapping a row opens `QuestionEditorSheet` (modal sheet).
+
+### QuestionEditorSheet
+
+Fields exposed for editing:
+
+| Field | Control |
+|---|---|
+| Domain | TextField + dropdown menu (pick existing or type new) |
+| Simulado | Stepper |
+| Question text | TextEditor |
+| Alternative A–E text | TextField per alternative |
+| Correct answer | Circle button (radio-style) per alternative |
+| Explanation EN | TextEditor |
+| Explanation PT-BR | TextEditor |
+| Note | TextField |
+
+The editor toolbar has **Cancel** (discards draft) and **Done**
+(commits to in-memory bank). Saving from the editor does **not**
+immediately write to disk — it only marks the bank as dirty.
+
+Pressing **Save** in the browse toolbar persists the full bank to
+`~/Library/Application Support/ExamSimulator/QAs/<filename>.json`.
+
+### Persistence
+
+-   Modified banks are saved to **Application Support**, mirroring
+    the original bundle filename.
+-   `ExamBankRepository.loadAll()` prefers the Application Support
+    version when present, falling back to the bundle.
+-   `ExamBankRepository.save(_ bank:)` writes the full `ExamBank`
+    (encoded as pretty JSON) and updates the in-memory cache.
+-   Returning to the Dashboard triggers `loadData()` so the sidebar
+    and detail reflect the updated bank immediately.
 
 ------------------------------------------------------------------------
 
@@ -480,12 +538,14 @@ ExamSimulator/                          ← repo root
 │       │   ├── StudyView.swift
 │       │   ├── ExamView.swift
 │       │   ├── ReviewView.swift
-│       │   └── ResultView.swift
+│       │   ├── ResultView.swift
+│       │   └── BrowseQuestionsView.swift
 │       ├── ViewModels/
 │       │   ├── DashboardViewModel.swift
 │       │   ├── StudyViewModel.swift
 │       │   ├── ExamViewModel.swift
-│       │   └── ReviewViewModel.swift
+│       │   ├── ReviewViewModel.swift
+│       │   └── BrowseQuestionsViewModel.swift
 │       ├── Components/
 │       │   ├── QuestionCard.swift
 │       │   ├── AlternativeRow.swift
@@ -584,11 +644,12 @@ In scope:
 -   Progress persistence (JSON files)
 -   Language Packs: en-us, pt-br
 -   AIProvider protocol + MockAIProvider stub
+-   Browse Questions with inline question editor
 
 Out of scope (Phase 2):
 
 -   Real OpenAI API calls
 -   Historical progress charts
--   In-app QA file importer
+-   In-app QA file importer (drag-and-drop new bank files)
 -   iOS companion app
 -   App Store distribution / code signing

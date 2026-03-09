@@ -3,9 +3,14 @@ import Foundation
 public struct ExamBank: Codable, Identifiable, Hashable {
     public var id: String { metadata.certification }
     public let metadata: ExamBankMetadata
-    public let questions: [Question]
+    public var questions: [Question]   // var — editable via Browse Questions
 
     public var bankId: String { metadata.certification }
+
+    public init(metadata: ExamBankMetadata, questions: [Question]) {
+        self.metadata = metadata
+        self.questions = questions
+    }
 }
 
 public struct ExamBankMetadata: Codable, Hashable {

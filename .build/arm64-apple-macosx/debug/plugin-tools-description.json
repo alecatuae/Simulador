@@ -93,6 +93,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/BrowseQuestionsViewModel.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift"
         },
         {
@@ -106,6 +110,10 @@
         {
           "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/BrowseQuestionsView.swift"
         },
         {
           "kind" : "file",
@@ -162,10 +170,12 @@
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DomainStatRow.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/QuestionNavigatorView.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/TimerView.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamViewModel.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ReviewViewModel.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.swift.o",
+        "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardView.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ExamView.swift.o",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/ResultView.swift.o",
@@ -195,7 +205,6 @@
         "-entry-point-function-name",
         "-Xfrontend",
         "ExamSimulator_main",
-        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -246,6 +255,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/DashboardViewModel.swift.o"
         },
         {
@@ -259,6 +272,10 @@
         {
           "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/StudyViewModel.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.swift.o"
         },
         {
           "kind" : "file",
@@ -301,10 +318,12 @@
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/DomainStatRow.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/QuestionNavigatorView.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/TimerView.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/BrowseQuestionsViewModel.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ExamViewModel.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ReviewViewModel.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift",
+        "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/BrowseQuestionsView.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ExamView.swift",
         "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ResultView.swift",
@@ -426,7 +445,6 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/include/ExamSimulatorCore-Swift.h",
-        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -585,7 +603,6 @@
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
         "-parseable-output",
         "-parse-as-library",
-        "-color-diagnostics",
         "-swift-version",
         "5",
         "-I",
@@ -682,7 +699,6 @@
         "-emit-objc-header",
         "-emit-objc-header-path",
         "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/include/ExamSimulatorPackageTests-Swift.h",
-        "-color-diagnostics",
         "-I",
         "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
         "-L",
@@ -739,10 +755,12 @@
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/DomainStatRow.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/QuestionNavigatorView.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Components/TimerView.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/BrowseQuestionsViewModel.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ExamViewModel.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/ReviewViewModel.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift",
+      "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/BrowseQuestionsView.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/DashboardView.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ExamView.swift",
       "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/ResultView.swift",
@@ -772,7 +790,6 @@
       "-entry-point-function-name",
       "-Xfrontend",
       "ExamSimulator_main",
-      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -840,7 +857,6 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorCore.build/include/ExamSimulatorCore-Swift.h",
-      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -895,7 +911,6 @@
       "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ModuleCache",
       "-parseable-output",
       "-parse-as-library",
-      "-color-diagnostics",
       "-swift-version",
       "5",
       "-I",
@@ -952,7 +967,6 @@
       "-emit-objc-header",
       "-emit-objc-header-path",
       "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulatorPackageTests.build/include/ExamSimulatorPackageTests-Swift.h",
-      "-color-diagnostics",
       "-I",
       "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
       "-L",
@@ -1060,6 +1074,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/BrowseQuestionsViewModel.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/DashboardViewModel.swift"
         },
         {
@@ -1073,6 +1091,10 @@
         {
           "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/ViewModels/StudyViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/Sources/ExamSimulator/Views/BrowseQuestionsView.swift"
         },
         {
           "kind" : "file",
@@ -1119,6 +1141,14 @@
         {
           "kind" : "file",
           "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/AppDependencies.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/alexandre/Certificações/Simulador/.build/arm64-apple-macosx/debug/ExamSimulator.build/BrowseQuestionsViewModel.swift.o"
         },
         {
           "kind" : "file",
