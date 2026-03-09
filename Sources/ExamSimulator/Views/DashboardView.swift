@@ -131,7 +131,7 @@ struct DashboardView: View {
     }
 
     private func actionButtons(_ bank: ExamBank) -> some View {
-        HStack(spacing: 12) {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 130), spacing: 12)], spacing: 12) {
             ActionButton(
                 title: loc.t("dashboard.startExam"),
                 icon: "timer",
@@ -142,7 +142,7 @@ struct DashboardView: View {
 
             ActionButton(
                 title: loc.t("dashboard.studyMode"),
-                icon: "book.open",
+                icon: "book",
                 color: .green
             ) {
                 activeSheet = .sessionConfig(.study)
@@ -200,7 +200,7 @@ struct DashboardView: View {
             Text(loc.t("dashboard.lastSession"))
                 .font(.headline)
             HStack(spacing: 20) {
-                VStack {
+                VStack(spacing: 2) {
                     Text(session.scorePercentage.formattedPercent)
                         .font(.title2.weight(.bold))
                         .foregroundStyle(session.passed ? .green : .red)
@@ -212,9 +212,9 @@ struct DashboardView: View {
                     Text(session.date.formattedShort)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                    Text("\(session.correctCount)/\(session.totalQuestions) correct")
+                    Text("\(session.correctCount)/\(session.totalQuestions) \(loc.t("result.correct").lowercased())")
                         .font(.subheadline)
-                    Text("Time: \(session.elapsedTime.formattedElapsed)")
+                    Text("\(loc.t("result.timeElapsed")): \(session.elapsedTime.formattedElapsed)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }

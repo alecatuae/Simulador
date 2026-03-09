@@ -252,9 +252,9 @@
           "is_correct": false
         }
       ],
-      "correct_answer": "C",
-      "explanation_en": "Incorrect. This bandwidth specification corresponds to the H200 GPU, which uses next-generation HBM3e memory technology. While H200 offers higher bandwidth than H100, the standard H100 GPU in DGX systems features 3.35 TB/s HBM3 bandwidth, not HBM3e.",
-      "explanation_ptbr": "Esta especificação de largura de banda corresponde à GPU H200, que usa tecnologia de memória HBM3e de próxima geração. Embora o H200 ofereça maior largura de banda que o H100, a GPU H100 padrão em sistemas DGX apresenta 3,35 TB/s de largura de banda HBM3, não HBM3e.",
+      "correct_answer": "B",
+      "explanation_en": "The NVIDIA H100 (Hopper architecture) uses HBM3 memory integrated directly into the GPU package. This memory provides approximately 3.35 TB/s of memory bandwidth per GPU.",
+      "explanation_ptbr": "A NVIDIA H100 (arquitetura Hopper) utiliza memória HBM3 integrada diretamente ao package da GPU. Essa memória oferece largura de banda de aproximadamente 3.35 TB/s por GPU.",
       "note": ""
     },
     {
@@ -604,9 +604,9 @@
           "is_correct": false
         }
       ],
-      "correct_answer": "C",
-      "explanation_en": "Incorrect. DGX A100 systems lack 4th generation Tensor Cores and do not support FP8 precision natively, only FP16/BF16. A100-based SUs cannot deliver 1 ExaFLOP at FP8 precision. H100 Hopper architecture is required for FP8 compute.",
-      "explanation_ptbr": "Os sistemas DGX A100 carecem de Tensor Cores de 4ª geração e não suportam precisão FP8 nativamente, apenas FP16/BF16. SUs baseados em A100 não podem fornecer 1 ExaFLOP na precisão FP8. A arquitetura H100 Hopper é necessária para computação FP8.",
+      "correct_answer": "B",
+      "explanation_en": "A DGX SuperPOD Scalable Unit (SU) with 32 DGX H100 systems delivers approximately 1 ExaFLOP of FP8 performance, exactly meeting the requirement stated in the question. This is possible because the H100 GPU (Hopper architecture) features 4th-generation Tensor Cores, which introduce native support for FP8 precision.",
+      "explanation_ptbr": "Um DGX SuperPOD Scalable Unit (SU) com 32 DGX H100 entrega aproximadamente 1 ExaFLOP de desempenho em FP8, exatamente o requisito da pergunta. Isso é possível porque a GPU H100 (arquitetura Hopper) possui Tensor Cores de 4ª geração, que introduzem suporte nativo à precisão FP8.",
       "note": ""
     },
     {

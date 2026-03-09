@@ -113,7 +113,7 @@ struct SessionConfigSheet: View {
             Divider()
             footer
         }
-        .frame(width: 500)
+        .frame(minWidth: 420, idealWidth: 500, maxWidth: 580)
         .onAppear {
             questionCount = availableCount
         }
@@ -129,7 +129,7 @@ struct SessionConfigSheet: View {
 
     private var header: some View {
         HStack {
-            Image(systemName: mode == .exam ? "timer" : "book.open")
+            Image(systemName: mode == .exam ? "timer" : "book")
                 .font(.title2)
                 .foregroundStyle(Color.accentColor)
             Text(loc.t("session.configTitle"))

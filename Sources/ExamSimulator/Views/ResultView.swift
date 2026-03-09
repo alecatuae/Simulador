@@ -101,16 +101,19 @@ struct ResultView: View {
     }
 
     private var sessionMeta: some View {
-        HStack(spacing: 6) {
+        VStack(spacing: 4) {
             Text(result.certification)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Text("·").foregroundStyle(.tertiary)
-            modeBadge
-            Text("·").foregroundStyle(.tertiary)
-            Text(result.date.formattedShort)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+            HStack(spacing: 6) {
+                modeBadge
+                Text("·").foregroundStyle(.tertiary)
+                Text(result.date.formattedShort)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
         }
     }
 
@@ -118,7 +121,7 @@ struct ResultView: View {
         let (label, color, icon): (String, Color, String) = {
             switch result.mode {
             case .exam:   return (loc.t("result.mode.exam"),   .blue,   "timer")
-            case .study:  return (loc.t("result.mode.study"),  .purple, "book.open")
+            case .study:  return (loc.t("result.mode.study"),  .purple, "book")
             case .review: return (loc.t("result.mode.review"), .gray,   "magnifyingglass")
             }
         }()

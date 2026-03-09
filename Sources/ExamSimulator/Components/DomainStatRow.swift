@@ -17,6 +17,7 @@ struct DomainStatRow: View {
                 Text(domain)
                     .font(.subheadline)
                     .lineLimit(1)
+                    .help(domain)
                 Spacer()
                 Text("\(correct)/\(total)")
                     .font(.subheadline.monospacedDigit())
