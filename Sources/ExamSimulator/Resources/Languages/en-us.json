@@ -52,7 +52,11 @@
     "exam.confirmSubmit.message": "You have %d unanswered questions. Are you sure you want to submit?",
     "exam.confirmSubmit.submit": "Submit Anyway",
     "exam.confirmSubmit.cancel": "Keep Reviewing",
-    "exam.answered": "Answered",
+    "exam.cancelExam": "Quit Exam",
+    "exam.confirmCancel.title": "Quit Exam?",
+    "exam.confirmCancel.message": "All answers will be discarded.",
+    "exam.confirmCancel.confirm": "Quit",
+    "exam.confirmCancel.stay": "Keep Going",
     "exam.unanswered": "Unanswered",
     "exam.flagged": "Flagged",
 

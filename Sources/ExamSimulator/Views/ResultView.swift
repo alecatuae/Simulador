@@ -13,11 +13,11 @@ struct ResultView: View {
     @State private var showReview = false
 
     var body: some View {
-        if showReview {
-            ReviewView(viewModel: viewModel)
-        } else {
-            resultContent
-        }
+        resultContent
+            .sheet(isPresented: $showReview) {
+                ReviewView(viewModel: viewModel)
+                    .environmentObject(loc)
+            }
     }
 
     // MARK: - Main layout
@@ -330,7 +330,4 @@ struct ResultView: View {
     }
 
     // MARK: - Actions (kept for ReviewView compatibility, not used in resultContent)
-    private var actionButtons: some View {
-        actionFooter
-    }
 }

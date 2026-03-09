@@ -52,7 +52,11 @@
     "exam.confirmSubmit.message": "Você tem %d questões sem resposta. Deseja finalizar mesmo assim?",
     "exam.confirmSubmit.submit": "Finalizar",
     "exam.confirmSubmit.cancel": "Continuar Revisando",
-    "exam.answered": "Respondidas",
+    "exam.cancelExam": "Sair do Exame",
+    "exam.confirmCancel.title": "Sair do Exame?",
+    "exam.confirmCancel.message": "Todas as respostas serão descartadas.",
+    "exam.confirmCancel.confirm": "Sair",
+    "exam.confirmCancel.stay": "Continuar",
     "exam.unanswered": "Sem Resposta",
     "exam.flagged": "Marcadas",
 

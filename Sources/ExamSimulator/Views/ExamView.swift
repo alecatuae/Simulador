@@ -7,6 +7,7 @@ struct ExamView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var showNavigator = false
+    @State private var showCancelConfirmation = false
 
     var body: some View {
         if viewModel.isSubmitted, let result = viewModel.sessionResult {
@@ -49,10 +50,28 @@ struct ExamView: View {
         } message: {
             Text(String(format: loc.t("exam.confirmSubmit.message"), viewModel.unansweredCount))
         }
+        .alert(loc.t("exam.confirmCancel.title"), isPresented: $showCancelConfirmation) {
+            Button(loc.t("exam.confirmCancel.stay"), role: .cancel) {}
+            Button(loc.t("exam.confirmCancel.confirm"), role: .destructive) {
+                dismiss()
+            }
+        } message: {
+            Text(loc.t("exam.confirmCancel.message"))
+        }
     }
 
     private var examToolbar: some View {
         HStack(spacing: 16) {
+            // Cancel / exit exam button
+            Button {
+                showCancelConfirmation = true
+            } label: {
+                Label(loc.t("exam.cancelExam"), systemImage: "xmark.circle")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            .buttonStyle(.plain)
+
             if viewModel.mode == .exam, let _ = viewModel.timeRemaining as TimeInterval? {
                 TimerView(timeRemaining: viewModel.timeRemaining, totalTime: 5400)
             }
