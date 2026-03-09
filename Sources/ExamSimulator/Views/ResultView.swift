@@ -23,22 +23,65 @@ struct ResultView: View {
     // MARK: - Main layout
 
     private var resultContent: some View {
-        ScrollView {
-            VStack(spacing: 28) {
-                heroSection
-                statsGrid
-                scoreBarSection
-                domainSection
-                actionButtons
+        VStack(spacing: 0) {
+            HStack(alignment: .top, spacing: 0) {
+                heroPanel
+                Divider()
+                statsPanel
             }
-            .padding(40)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            Divider()
+            actionFooter
         }
-        .frame(minWidth: 740, minHeight: 580)
+        .frame(minWidth: 800, minHeight: 520)
         .onAppear {
             withAnimation(.easeOut(duration: 1.2)) {
                 scoreProgress = result.scorePercentage / 100
             }
         }
+    }
+
+    /// Left column: score ring + pass/fail + meta, vertically centred.
+    private var heroPanel: some View {
+        VStack(spacing: 20) {
+            Spacer(minLength: 0)
+            heroSection
+            Spacer(minLength: 0)
+        }
+        .padding(28)
+        .frame(width: 280)
+    }
+
+    /// Right column: stats, score bar, domain breakdown. Scrolls only when
+    /// the exam bank has many domains (≥8); for typical 3-domain banks it fits.
+    private var statsPanel: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                statsGrid
+                scoreBarSection
+                domainSection
+            }
+            .padding(28)
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    /// Always-visible footer anchored below both columns.
+    private var actionFooter: some View {
+        HStack(spacing: 12) {
+            Button(loc.t("result.backToDashboard")) {
+                dismiss()
+            }
+            .keyboardShortcut(.cancelAction)
+            Spacer()
+            Button(loc.t("result.reviewAnswers")) {
+                showReview = true
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding(.horizontal, 28)
+        .padding(.vertical, 14)
+        .background(Color(nsColor: .windowBackgroundColor))
     }
 
     // MARK: - Hero
@@ -286,21 +329,8 @@ struct ResultView: View {
         }
     }
 
-    // MARK: - Actions
-
+    // MARK: - Actions (kept for ReviewView compatibility, not used in resultContent)
     private var actionButtons: some View {
-        HStack(spacing: 12) {
-            Button(loc.t("result.backToDashboard")) {
-                dismiss()
-            }
-            .keyboardShortcut(.cancelAction)
-
-            Spacer()
-
-            Button(loc.t("result.reviewAnswers")) {
-                showReview = true
-            }
-            .buttonStyle(.borderedProminent)
-        }
+        actionFooter
     }
 }

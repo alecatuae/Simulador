@@ -33,7 +33,10 @@ struct StudyView: View {
                         }
                     }
                 }
-                .padding(32)
+                .padding(.horizontal, 40)
+                .padding(.vertical, 28)
+                .frame(maxWidth: 800)
+                .frame(maxWidth: .infinity)
             }
             Divider()
             navigationBar

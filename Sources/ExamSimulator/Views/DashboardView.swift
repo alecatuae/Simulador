@@ -97,20 +97,35 @@ struct DashboardView: View {
     }
 
     private func bankDetailView(_ bank: ExamBank) -> some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                bankHeader(bank)
-                Divider()
-                actionButtons(bank)
-                Divider()
+        VStack(alignment: .leading, spacing: 0) {
+            bankHeader(bank)
+                .padding(.horizontal, 32)
+                .padding(.top, 28)
+                .padding(.bottom, 16)
+
+            Divider()
+
+            actionButtons(bank)
+                .padding(.horizontal, 32)
+                .padding(.vertical, 16)
+
+            Divider()
+
+            HStack(alignment: .top, spacing: 0) {
                 domainSection(bank)
+                    .padding(28)
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+
                 if let last = viewModel.lastSession(for: bank) {
                     Divider()
                     lastSessionSection(last)
+                        .padding(28)
+                        .frame(width: 270, alignment: .topLeading)
                 }
             }
-            .padding(32)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func bankHeader(_ bank: ExamBank) -> some View {
