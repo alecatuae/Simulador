@@ -229,6 +229,12 @@ struct SessionConfigSheet: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text("\(effectiveCount) \(loc.t("dashboard.questions"))")
                     .font(.subheadline.weight(.semibold))
+                Label(
+                    String(format: loc.t("session.passingScore.format"), bank.metadata.passingScorePercent),
+                    systemImage: "checkmark.seal"
+                )
+                .font(.caption)
+                .foregroundStyle(.secondary)
                 if availableCount == 0 {
                     Text("Select a different scope")
                         .font(.caption)
@@ -259,7 +265,8 @@ struct SessionConfigSheet: View {
             timeLimit: mode == .exam ? config.examDefaults.timerSeconds : nil,
             randomizeQuestions: randomizeQuestions,
             randomizeAnswers: config.examDefaults.randomizeAnswers,
-            questionLimit: limit
+            questionLimit: limit,
+            passingScorePercent: bank.metadata.passingScorePercent
         )
         let session = engine.buildSession(
             config: sessionConfig,

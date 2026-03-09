@@ -1,6 +1,6 @@
-# Metadata — NCA-AIIO_QA.json
+# Metadata — QA JSON Files
 
-Documentação do bloco `metadata` presente no arquivo `NCA-AIIO_QA.json`.
+Documentação do bloco `metadata` presente nos arquivos de banco de questões (`*_QA.json`).
 
 ---
 
@@ -13,6 +13,7 @@ Documentação do bloco `metadata` presente no arquivo `NCA-AIIO_QA.json`.
     "certification": "NVIDIA Certified Associate — AI Infrastructure and Operations (NCA-AIIO)",
     "source": "Practice Exams — NVIDIA AI Infrastructure NCA-AIIO 2026 (Udemy)",
     "format": "Perguntas e alternativas em inglês (idioma original). Explicações traduzidas para português (pt-br).",
+    "passing_score_percent": 80,
     "total_questions": 130,
     "simulados": [
       { "number": 1, "range": "1-65",   "questions": 65 },
@@ -31,15 +32,28 @@ Documentação do bloco `metadata` presente no arquivo `NCA-AIIO_QA.json`.
 
 ## Campos
 
-| Campo             | Tipo     | Descrição                                                        |
-|-------------------|----------|------------------------------------------------------------------|
-| `title`           | string   | Título completo do documento de estudo                           |
-| `certification`   | string   | Nome oficial da certificação NVIDIA                              |
-| `source`          | string   | Origem das questões (curso Udemy)                                |
-| `format`          | string   | Descrição do idioma das perguntas e explicações                  |
-| `total_questions` | integer  | Total de questões no arquivo (130)                               |
-| `simulados`       | array    | Lista dos simulados com número, faixa de questões e quantidade   |
-| `domains`         | array    | Lista dos domínios da certificação com contagem de questões      |
+| Campo                   | Tipo     | Obrigatório | Padrão | Descrição                                                        |
+|-------------------------|----------|:-----------:|:------:|------------------------------------------------------------------|
+| `title`                 | string   | ✓           | —      | Título completo do documento de estudo                           |
+| `certification`         | string   | ✓           | —      | Nome oficial da certificação (usado como ID único do banco)      |
+| `source`                | string   | ✓           | —      | Origem das questões                                              |
+| `format`                | string   | ✓           | —      | Descrição do idioma das perguntas e explicações                  |
+| `passing_score_percent` | number   |             | `70`   | Nota mínima para aprovação (0–100). Editável via Browse Questions |
+| `total_questions`       | integer  | ✓           | —      | Total de questões no arquivo                                     |
+| `simulados`             | array    | ✓           | —      | Lista dos simulados com número, faixa de questões e quantidade   |
+| `domains`               | array    | ✓           | —      | Lista dos domínios da certificação com contagem de questões      |
+
+> **Retrocompatibilidade**: `passing_score_percent` é opcional. Arquivos que não incluam o campo assumem o valor padrão `70.0` automaticamente.
+
+---
+
+### Como `passing_score_percent` afeta o simulador
+
+- O valor é lido no momento do carregamento do banco.
+- Ao iniciar um Exam ou Study, o valor é copiado para `SessionConfig.passingScorePercent`.
+- O `ExamEngine` usa esse valor para calcular o `SessionResult` (passed/failed).
+- O usuário pode alterar `passing_score_percent` diretamente em **Browse Questions** (barra de configurações do banco). A alteração é salva em `~/Library/Application Support/ExamSimulator/QAs/`.
+- A tela de configuração de sessão exibe o valor como informação: "Aprovação: 80%".
 
 ---
 

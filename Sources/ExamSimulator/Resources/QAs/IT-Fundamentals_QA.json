@@ -4,6 +4,7 @@
     "certification": "IT & AI Fundamentals Associate",
     "source": "Sample Question Bank — Vendor-Neutral",
     "format": "Perguntas e alternativas em inglês. Explicações disponíveis em inglês e português (pt-br).",
+    "passing_score_percent": 70,
     "total_questions": 20,
     "simulados": [
       {

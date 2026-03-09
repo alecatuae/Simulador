@@ -16,6 +16,8 @@ struct BrowseQuestionsView: View {
         VStack(spacing: 0) {
             browseToolbar
             Divider()
+            bankSettingsBar
+            Divider()
             content
         }
         .frame(minWidth: 900, minHeight: 580)
@@ -53,6 +55,42 @@ struct BrowseQuestionsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }
         }
+    }
+
+    // MARK: - Bank Settings Bar
+
+    private var bankSettingsBar: some View {
+        HStack(spacing: 16) {
+            Image(systemName: "checkmark.seal.fill")
+                .foregroundStyle(Color.accentColor)
+            Text(loc.t("browse.passingScore"))
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+
+            Text(String(format: "%.0f%%", viewModel.bank.metadata.passingScorePercent))
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Color.accentColor)
+                .frame(width: 44, alignment: .leading)
+
+            Stepper(
+                "",
+                value: $viewModel.bank.metadata.passingScorePercent,
+                in: 1...100,
+                step: 5
+            )
+            .labelsHidden()
+            .frame(width: 80)
+            .help(loc.t("browse.passingScore.hint"))
+
+            Spacer()
+
+            Text(loc.t("browse.passingScore.hint"))
+                .font(.caption)
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 8)
+        .background(Color(nsColor: .controlBackgroundColor))
     }
 
     // MARK: - Toolbar

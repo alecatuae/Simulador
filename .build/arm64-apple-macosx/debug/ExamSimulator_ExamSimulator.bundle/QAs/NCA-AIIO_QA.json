@@ -4,6 +4,7 @@
     "certification": "NVIDIA Certified Associate — AI Infrastructure and Operations (NCA-AIIO)",
     "source": "Practice Exams — NVIDIA AI Infrastructure NCA-AIIO 2026 (Udemy)",
     "format": "Perguntas e alternativas em inglês (idioma original). Explicações traduzidas para português (pt-br).",
+    "passing_score_percent": 70,
     "total_questions": 130,
     "simulados": [
       {

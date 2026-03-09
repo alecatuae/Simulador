@@ -23,6 +23,8 @@ public struct SessionConfig {
     public let randomizeAnswers: Bool
     /// Maximum number of questions to include. `nil` means use all available.
     public let questionLimit: Int?
+    /// Minimum score (0–100) required to pass. Sourced from the exam bank metadata.
+    public let passingScorePercent: Double
 
     public init(
         bankId: String,
@@ -31,7 +33,8 @@ public struct SessionConfig {
         timeLimit: TimeInterval? = nil,
         randomizeQuestions: Bool = true,
         randomizeAnswers: Bool = false,
-        questionLimit: Int? = nil
+        questionLimit: Int? = nil,
+        passingScorePercent: Double = 70.0
     ) {
         self.bankId = bankId
         self.mode = mode
@@ -40,6 +43,7 @@ public struct SessionConfig {
         self.randomizeQuestions = randomizeQuestions
         self.randomizeAnswers = randomizeAnswers
         self.questionLimit = questionLimit
+        self.passingScorePercent = passingScorePercent
     }
 }
 

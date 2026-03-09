@@ -116,6 +116,10 @@
     "browse.confirmDiscard.title": "Discard Changes?",
     "browse.confirmDiscard.message": "All unsaved edits will be lost.",
     "browse.noResults": "No questions match the current filter",
+    "browse.passingScore": "Passing Score",
+    "browse.passingScore.hint": "Applies to all exams on this bank",
+
+    "session.passingScore.format": "Passing: %.0f%%",
 
     "editor.title": "Edit Question",
     "editor.metadata": "Metadata",

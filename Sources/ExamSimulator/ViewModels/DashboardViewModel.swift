@@ -56,7 +56,8 @@ final class DashboardViewModel: ObservableObject {
             filter: filter,
             timeLimit: nil,
             randomizeQuestions: config.examDefaults.randomizeQuestions,
-            randomizeAnswers: config.examDefaults.randomizeAnswers
+            randomizeAnswers: config.examDefaults.randomizeAnswers,
+            passingScorePercent: bank.metadata.passingScorePercent
         )
         let session = engine.buildSession(
             config: sessionConfig,
@@ -75,7 +76,8 @@ final class DashboardViewModel: ObservableObject {
             filter: filter,
             timeLimit: config.examDefaults.timerSeconds,
             randomizeQuestions: config.examDefaults.randomizeQuestions,
-            randomizeAnswers: config.examDefaults.randomizeAnswers
+            randomizeAnswers: config.examDefaults.randomizeAnswers,
+            passingScorePercent: bank.metadata.passingScorePercent
         )
         let session = engine.buildSession(
             config: sessionConfig,

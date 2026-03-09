@@ -212,6 +212,7 @@ The canonical data format is defined by `NCA-AIIO_QA.json`.
     "certification": "...",
     "source": "...",
     "format": "...",
+    "passing_score_percent": 80,
     "total_questions": 130,
     "simulados": [
       { "number": 1, "range": "1-65",   "questions": 65 },
@@ -225,6 +226,22 @@ The canonical data format is defined by `NCA-AIIO_QA.json`.
   }
 }
 ```
+
+### `passing_score_percent` — nota mínima do banco
+
+| Aspecto | Detalhe |
+|---|---|
+| Tipo | `number` (0–100) |
+| Obrigatório | Não — padrão `70.0` se ausente |
+| Editável em runtime | Sim — via **Browse Questions → Bank Settings bar** |
+| Persistência | Salvo em App Support quando o usuário altera e pressiona **Save** |
+| Propagação | Copiado para `SessionConfig.passingScorePercent` ao iniciar qualquer sessão |
+| Uso | Passado ao `ExamEngine.calculateResult()` para determinar Pass/Fail |
+| Visibilidade na UI | Exibido na tela de configuração de sessão: "Aprovação: 80%" |
+
+> **Nota**: O valor em `AppConfig.examDefaults.passingScorePercent` deixou de ser usado
+> para sessões iniciadas pelo usuário. Esse campo global permanece como fallback
+> apenas para sessões construídas programaticamente sem um banco associado.
 
 ## Question structure
 
@@ -380,6 +397,10 @@ list of every question in the selected exam bank.
     -   Search field (filters by question text, domain, or ID)
     -   "Save" button (green, visible only when there are unsaved edits)
 
+-   **Bank Settings bar** (between toolbar and question list)
+    -   Displays and edits `passing_score_percent` via Stepper (step 5, range 1–100)
+    -   Changes are tracked as dirty edits and saved with the "Save" button
+
 -   **Question list** — each row shows:
     -   `#id`  ·  Simulado badge  ·  Domain  ·  First ~2 lines of question text
     -   Pencil icon on right to indicate tappable row
@@ -445,7 +466,7 @@ Provide:
 -   correct / incorrect / skipped counts
 -   domain performance breakdown
 -   elapsed time
--   pass/fail indicator (vs `passingScorePercent` from config)
+-   pass/fail indicator (vs `passingScorePercent` from `SessionConfig`, sourced from bank metadata)
 
 ------------------------------------------------------------------------
 

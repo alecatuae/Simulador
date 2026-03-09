@@ -62,7 +62,7 @@ struct DashboardView: View {
                     context: ctx,
                     engine: deps.engine,
                     progressRepo: deps.progressRepository,
-                    passingScore: deps.config.examDefaults.passingScorePercent
+                    passingScore: ctx.session.config.passingScorePercent
                 ))
                 .onDisappear { viewModel.reloadProgress() }
             case .exam(let ctx):
@@ -70,7 +70,7 @@ struct DashboardView: View {
                     context: ctx,
                     engine: deps.engine,
                     progressRepo: deps.progressRepository,
-                    passingScore: deps.config.examDefaults.passingScorePercent
+                    passingScore: ctx.session.config.passingScorePercent
                 ))
                 .onDisappear { viewModel.reloadProgress() }
             case .browse(let bank):

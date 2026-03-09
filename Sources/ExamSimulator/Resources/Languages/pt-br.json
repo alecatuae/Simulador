@@ -116,6 +116,10 @@
     "browse.confirmDiscard.title": "Descartar Alterações?",
     "browse.confirmDiscard.message": "Todas as edições não salvas serão perdidas.",
     "browse.noResults": "Nenhuma questão corresponde ao filtro atual",
+    "browse.passingScore": "Nota Mínima",
+    "browse.passingScore.hint": "Aplica-se a todos os exames deste banco",
+
+    "session.passingScore.format": "Aprovação: %.0f%%",
 
     "editor.title": "Editar Questão",
     "editor.metadata": "Metadados",
