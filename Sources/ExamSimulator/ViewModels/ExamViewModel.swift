@@ -19,12 +19,14 @@ final class ExamViewModel: ObservableObject {
     private let progressRepo: ProgressRepository
     private let passingScore: Double
     private let startTime: Date
+    private let sessionConfig: SessionConfig   // original config — preserved for result
     private var timer: Timer?
     private let timeLimit: TimeInterval?
 
     init(context: SessionContext, engine: ExamEngine, progressRepo: ProgressRepository, passingScore: Double) {
         self.questions = context.session.questions
         self.bank = context.bank
+        self.sessionConfig = context.session.config
         self.mode = context.session.config.mode
         self.engine = engine
         self.progressRepo = progressRepo
@@ -112,13 +114,8 @@ final class ExamViewModel: ObservableObject {
     }
 
     private func buildSession() -> ExamSession {
-        let config = SessionConfig(
-            bankId: bank.bankId,
-            mode: mode,
-            filter: .all,
-            timeLimit: timeLimit
-        )
-        let session = ExamSession(config: config, questions: questions, startTime: startTime)
+        // Re-use the original config so the stored result retains filter, order, and limit.
+        let session = ExamSession(config: sessionConfig, questions: questions, startTime: startTime)
         session.answers = selectedAnswers
         session.flaggedIds = flaggedIds
         session.endTime = Date()

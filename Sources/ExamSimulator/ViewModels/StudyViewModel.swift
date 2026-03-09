@@ -19,6 +19,7 @@ final class StudyViewModel: ObservableObject {
     private let progressRepo: ProgressRepository
     private let passingScore: Double
     private let startTime: Date
+    private let sessionConfig: SessionConfig   // original config — preserved for result
     private var progress: UserProgress
     /// Accumulates every answer given across the entire session.
     private var allAnswers: [Int: String] = [:]
@@ -31,6 +32,7 @@ final class StudyViewModel: ObservableObject {
     ) {
         self.questions = context.session.questions
         self.bank = context.bank
+        self.sessionConfig = context.session.config
         self.engine = engine
         self.progressRepo = progressRepo
         self.passingScore = passingScore
@@ -95,12 +97,8 @@ final class StudyViewModel: ObservableObject {
     }
 
     func finishSession() {
-        let config = SessionConfig(
-            bankId: bank.bankId,
-            mode: .study,
-            filter: .all
-        )
-        let session = ExamSession(config: config, questions: questions, startTime: startTime)
+        // Re-use the original config so the stored result retains filter, order, and limit.
+        let session = ExamSession(config: sessionConfig, questions: questions, startTime: startTime)
         session.answers = allAnswers
         session.endTime = Date()
 

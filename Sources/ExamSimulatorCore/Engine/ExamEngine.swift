@@ -29,6 +29,7 @@ public final class ExamEngine {
         bookmarkedIds: Set<Int> = [],
         incorrectIds: Set<Int> = []
     ) -> ExamSession {
+        // Step 1 — Scope: keep only questions matching the selected filter.
         var filtered = filterQuestions(
             questions,
             filter: config.filter,
@@ -36,14 +37,21 @@ public final class ExamEngine {
             incorrectIds: incorrectIds
         )
 
+        // Step 2 — Order: shuffle BEFORE applying the limit so that
+        //   prefix(N) is a truly random sample from the full filtered pool,
+        //   not just the first N questions in original file order.
         if config.randomizeQuestions {
             filtered.shuffle()
         }
 
+        // Step 3 — Limit: take the first N after the optional shuffle.
+        //   nil  → use all available (no truncation).
+        //   N≥filtered.count → ignored, all questions used.
         if let limit = config.questionLimit, limit < filtered.count {
             filtered = Array(filtered.prefix(limit))
         }
 
+        // Step 4 — Answer order: optionally reshuffle alternative letters.
         if config.randomizeAnswers {
             filtered = filtered.map { question -> Question in
                 let shuffled = question.alternatives.shuffled()
