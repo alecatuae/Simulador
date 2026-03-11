@@ -10,6 +10,10 @@ struct ReviewView: View {
     @State private var showEnglishExplanation = true
     @State private var showAIPanel = false
 
+    private var sidebarOpen: Bool {
+        showAIPanel && deps.isAIAvailable && viewModel.totalFiltered > 0
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             reviewToolbar
@@ -18,27 +22,55 @@ struct ReviewView: View {
             if viewModel.filteredResults.isEmpty {
                 emptyState
             } else {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
-                        if let question = viewModel.currentQuestion,
-                           let result = viewModel.currentResult {
-                            questionHeader(question, result: result)
-                            questionText(question)
-                            alternativesList(question, result: result)
-                            explanationSection(question)
-                        }
+                HStack(spacing: 0) {
+                    mainScroll
+                    if sidebarOpen, let question = viewModel.currentQuestion {
+                        Divider()
+                        aiSidebar(for: question)
+                            .transition(.move(edge: .trailing).combined(with: .opacity))
                     }
-                    .padding(.horizontal, 40)
-                    .padding(.vertical, 28)
-                    .frame(maxWidth: 800)
-                    .frame(maxWidth: .infinity)
                 }
+                .animation(.easeInOut(duration: 0.25), value: sidebarOpen)
                 Divider()
                 navigationBar
             }
         }
-        .frame(minWidth: 800, minHeight: 600)
+        .frame(minWidth: sidebarOpen ? 1160 : 800, minHeight: 600)
+        .animation(.easeInOut(duration: 0.25), value: sidebarOpen)
     }
+
+    // MARK: - Scroll + sidebar
+
+    private var mainScroll: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                if let question = viewModel.currentQuestion,
+                   let result = viewModel.currentResult {
+                    questionHeader(question, result: result)
+                    questionText(question)
+                    alternativesList(question, result: result)
+                    explanationSection(question)
+                }
+            }
+            .padding(.horizontal, sidebarOpen ? 24 : 40)
+            .padding(.vertical, 28)
+            .frame(maxWidth: sidebarOpen ? .infinity : 800)
+            .frame(maxWidth: .infinity)
+        }
+    }
+
+    private func aiSidebar(for question: Question) -> some View {
+        AIAssistantView(
+            aiService: deps.aiService,
+            question: question,
+            selectedAnswer: viewModel.currentResult?.selectedAnswer,
+            languageIsEnglish: showEnglishExplanation
+        )
+        .id(question.id)
+        .frame(width: 340)
+    }
+
+    // MARK: - Toolbar
 
     private var reviewToolbar: some View {
         HStack(spacing: 12) {
@@ -86,6 +118,8 @@ struct ReviewView: View {
         .padding(.vertical, 12)
         .background(Color(nsColor: .windowBackgroundColor))
     }
+
+    // MARK: - Question content
 
     private func questionHeader(_ question: Question, result: QuestionResult) -> some View {
         HStack {
@@ -190,19 +224,10 @@ struct ReviewView: View {
                 .background(Color(nsColor: .controlColor))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             }
-
-            if showAIPanel, deps.isAIAvailable,
-               let result = viewModel.currentResult {
-                AIAssistantView(
-                    aiService: deps.aiService,
-                    question: question,
-                    selectedAnswer: result.selectedAnswer
-                )
-                .id(question.id)
-                .transition(.opacity.combined(with: .move(edge: .bottom)))
-            }
         }
     }
+
+    // MARK: - Navigation bar
 
     private var navigationBar: some View {
         HStack {
@@ -227,6 +252,8 @@ struct ReviewView: View {
         .padding(.vertical, 16)
         .background(Color(nsColor: .windowBackgroundColor))
     }
+
+    // MARK: - Empty state
 
     private var emptyState: some View {
         VStack(spacing: 12) {

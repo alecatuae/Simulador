@@ -471,25 +471,48 @@ Each question in Study Mode displays after answering:
 -   bookmark feature
 -   **AI Assistant panel** (active when API key is configured)
 
-### AI Assistant Panel (Study Mode & Review Mode)
+### AI Assistant Sidebar (Study Mode & Review Mode)
 
 When an API key is saved in Settings, an **✦ AI Assistant** button
 appears in the toolbar as soon as the explanation section is visible.
 
-Clicking the button opens an inline chat panel below the explanation:
+Clicking the button opens a **fixed-width sidebar (340 pt) on the right
+side** of the question. The main content shifts left to accommodate the
+sidebar; the `minWidth` of the window expands to 1 160 pt while the
+sidebar is open.
+
+#### Sidebar features
 
 -   **Auto-explain** — on first open, the AI automatically generates a
     concise explanation of why the correct answer is right and why the
-    other options are wrong, using the question context and the
-    student's selected answer.
+    other options are wrong, using the full question context (question
+    text, correct answer, official explanation).
+-   **Full question context always sent** — every request includes the
+    question text, correct answer and official explanation so the AI
+    can reason accurately, even for follow-up questions.
+-   **Response language** — the AI replies in the same language as the
+    currently selected explanation (English or pt-BR). The
+    `language` parameter (`"en"` or `"pt-BR"`) is forwarded from the
+    `showEnglishExplanation` toggle to `AIAssistantViewModel`,
+    `AIStudyAssistantService`, and `OpenAIProvider`, which appends a
+    language instruction to the system prompt.
+-   **Suggestion chips** — after the initial explanation loads, a
+    horizontal scrollable row of predefined prompt chips is shown
+    above the input field:
+    1.  "Aprofunde no contexto da questão" / "Deepen the context of this question"
+    2.  "Dê um exemplo prático" / "Give a practical example"
+    3.  "Por que as outras opções estão erradas?" / "Why are the other options wrong?"
+    4.  "Como isso se aplica no mundo real?" / "How does this apply in the real world?"
+    5.  "Simplifique para iniciantes" / "Simplify for beginners"
+    Tapping a chip sends that prompt immediately via `quickSend(_:)`.
 -   **Follow-up chat** — the student can type any follow-up question
     and get a contextual answer. Full conversation history is
     maintained for the duration of the question view.
--   **Panel resets** when navigating to the next/previous question.
--   The button and panel are hidden when `isAIAvailable = false`
-    (no API key configured).
+-   **Sidebar resets** when navigating to the next/previous question.
+-   The button is grayed-out (with popover guidance) when
+    `isAIAvailable = false` (no API key configured).
 
-The same panel is available in **Review Mode** during post-exam review.
+The same sidebar is available in **Review Mode** during post-exam review.
 
 ------------------------------------------------------------------------
 

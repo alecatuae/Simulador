@@ -8,11 +8,16 @@ public final class OpenAIProvider: AIProvider {
     private let config: AIProviderConfig
     private let apiKeyResolver: () -> String
 
-    private let systemPrompt = """
-    You are a concise IT certification exam study assistant. \
-    Answer in 3-5 sentences. Focus on what the student needs \
-    to know for the exam. Be direct and clear.
-    """
+    private func systemPrompt(language: String) -> String {
+        let langInstruction = language.lowercased().hasPrefix("pt")
+            ? "Always respond in Brazilian Portuguese (pt-BR)."
+            : "Always respond in English."
+        return """
+        You are a concise IT certification exam study assistant. \
+        Answer in 3-5 sentences. Focus on what the student needs \
+        to know for the exam. Be direct and clear. \(langInstruction)
+        """
+    }
 
     public var isAvailable: Bool { !apiKeyResolver().isEmpty }
 
@@ -23,14 +28,17 @@ public final class OpenAIProvider: AIProvider {
 
     // MARK: - AIProvider
 
-    public func explain(question: Question, selectedAnswer: String?) async throws -> String {
+    public func explain(question: Question, selectedAnswer: String?, language: String) async throws -> String {
         let correct = question.alternatives.first { $0.letter == question.correctAnswer }
         let selected = selectedAnswer.flatMap { l in question.alternatives.first { $0.letter == l } }
+        let explanation = language.lowercased().hasPrefix("pt")
+            ? question.explanationPtBr : question.explanationEn
 
         var prompt = """
         Question (#\(question.id)): \(question.question)
         Domain: \(question.domain)
         Correct answer: \(question.correctAnswer). \(correct?.text ?? "")
+        Official explanation: \(explanation)
         """
 
         if let selected, selected.letter != question.correctAnswer {
@@ -40,30 +48,34 @@ public final class OpenAIProvider: AIProvider {
         prompt += "\n\nBriefly explain why \(question.correctAnswer) is correct and why the other options are not."
 
         return try await complete(messages: [
-            .init(role: .system, content: systemPrompt),
+            .init(role: .system, content: systemPrompt(language: language)),
             .init(role: .user,   content: prompt)
         ])
     }
 
-    public func chat(messages: [ChatMessage], question: Question) async throws -> String {
+    public func chat(messages: [ChatMessage], question: Question, language: String) async throws -> String {
+        let explanation = language.lowercased().hasPrefix("pt")
+            ? question.explanationPtBr : question.explanationEn
         let context = ChatMessage(role: .system, content: """
-        \(systemPrompt)
-        The student is reviewing question #\(question.id) from domain '\(question.domain)': \
-        \(question.question) — Correct answer: \(question.correctAnswer).
+        \(systemPrompt(language: language))
+        The student is reviewing question #\(question.id) from domain '\(question.domain)'.
+        Question: \(question.question)
+        Correct answer: \(question.correctAnswer).
+        Official explanation: \(explanation)
         """)
         return try await complete(messages: [context] + messages)
     }
 
     public func simplify(explanation: String) async throws -> String {
         return try await complete(messages: [
-            .init(role: .system, content: systemPrompt),
+            .init(role: .system, content: systemPrompt(language: "en")),
             .init(role: .user,   content: "Simplify this in 2-3 sentences for a beginner:\n\n\(explanation)")
         ])
     }
 
     public func additionalContext(for question: Question) async throws -> String {
         return try await complete(messages: [
-            .init(role: .system, content: systemPrompt),
+            .init(role: .system, content: systemPrompt(language: "en")),
             .init(role: .user,   content:
                 "Give 2-3 sentences of extra context about: \(question.question) (Domain: \(question.domain))")
         ])

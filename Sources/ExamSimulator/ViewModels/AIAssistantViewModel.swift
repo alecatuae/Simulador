@@ -10,13 +10,20 @@ final class AIAssistantViewModel: ObservableObject {
 
     let question: Question
     let selectedAnswer: String?
+    let languageIsEnglish: Bool
 
     private let aiService: AIStudyAssistantService
 
-    init(aiService: AIStudyAssistantService, question: Question, selectedAnswer: String?) {
+    var language: String { languageIsEnglish ? "en" : "pt-BR" }
+
+    init(aiService: AIStudyAssistantService,
+         question: Question,
+         selectedAnswer: String?,
+         languageIsEnglish: Bool = true) {
         self.aiService = aiService
         self.question = question
         self.selectedAnswer = selectedAnswer
+        self.languageIsEnglish = languageIsEnglish
     }
 
     // MARK: - Actions
@@ -29,7 +36,8 @@ final class AIAssistantViewModel: ObservableObject {
         do {
             let response = try await aiService.explain(
                 question: question,
-                selectedAnswer: selectedAnswer
+                selectedAnswer: selectedAnswer,
+                language: language
             )
             messages.append(ChatMessage(role: .assistant, content: response))
         } catch {
@@ -42,27 +50,40 @@ final class AIAssistantViewModel: ObservableObject {
     func send() async {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty, !isLoading else { return }
-
         inputText = ""
+        await sendMessage(text)
+    }
+
+    /// Send a predefined suggestion prompt directly.
+    func quickSend(_ prompt: String) {
+        guard !isLoading else { return }
+        inputText = ""
+        Task { await sendMessage(prompt) }
+    }
+
+    func dismissError() { error = nil }
+
+    // MARK: - Private
+
+    private func sendMessage(_ text: String) async {
         let userMsg = ChatMessage(role: .user, content: text)
         messages.append(userMsg)
 
         isLoading = true
         error = nil
         do {
-            // Send only user/assistant messages (no system messages in history)
             let history = messages.filter { $0.role != .system }
-            let response = try await aiService.chat(messages: history, question: question)
+            let response = try await aiService.chat(
+                messages: history,
+                question: question,
+                language: language
+            )
             messages.append(ChatMessage(role: .assistant, content: response))
         } catch {
             self.error = errorMessage(from: error)
         }
         isLoading = false
     }
-
-    func dismissError() { error = nil }
-
-    // MARK: - Private
 
     private func errorMessage(from error: Error) -> String {
         (error as? LocalizedError)?.errorDescription ?? error.localizedDescription

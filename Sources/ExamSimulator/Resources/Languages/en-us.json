@@ -167,6 +167,11 @@
     "ai.notConfigured.hint": "AI Assistant — configure API key in Settings (Cmd+,)",
     "ai.notConfigured.message": "To use the AI Assistant, add your OpenAI API key in Settings.",
     "ai.notConfigured.hint2": "Open Settings with Cmd+,",
+    "ai.suggestion.deepen": "Deepen the context of this question",
+    "ai.suggestion.example": "Give a practical example",
+    "ai.suggestion.whyWrong": "Why are the other options wrong?",
+    "ai.suggestion.realWorld": "How does this apply in the real world?",
+    "ai.suggestion.simplify": "Simplify for beginners",
 
     "error.loadFailed": "Failed to load exam banks",
     "error.noExams": "No exam banks found in Resources/QAs/",

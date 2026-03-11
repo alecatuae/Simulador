@@ -5,11 +5,11 @@ public final class MockAIProvider: AIProvider {
     public var isAvailable: Bool { false }
     public init() {}
 
-    public func explain(question: Question, selectedAnswer: String?) async throws -> String {
+    public func explain(question: Question, selectedAnswer: String?, language: String) async throws -> String {
         throw AIProviderError.notConfigured
     }
 
-    public func chat(messages: [ChatMessage], question: Question) async throws -> String {
+    public func chat(messages: [ChatMessage], question: Question, language: String) async throws -> String {
         throw AIProviderError.notConfigured
     }
 

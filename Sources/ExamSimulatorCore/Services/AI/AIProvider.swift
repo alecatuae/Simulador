@@ -3,9 +3,11 @@ import Foundation
 public protocol AIProvider {
     var isAvailable: Bool { get }
     /// Auto-explain a question to the student after they answered.
-    func explain(question: Question, selectedAnswer: String?) async throws -> String
+    /// - Parameter language: BCP-47 tag for the desired response language, e.g. "en" or "pt-BR".
+    func explain(question: Question, selectedAnswer: String?, language: String) async throws -> String
     /// Continue a conversation with full history + question context.
-    func chat(messages: [ChatMessage], question: Question) async throws -> String
+    /// - Parameter language: BCP-47 tag for the desired response language.
+    func chat(messages: [ChatMessage], question: Question, language: String) async throws -> String
     /// Simplify an existing explanation for easier reading.
     func simplify(explanation: String) async throws -> String
     /// Provide extra context about a question's topic.
@@ -39,12 +41,12 @@ public struct AIStudyAssistantService {
 
     public var isAvailable: Bool { provider.isAvailable }
 
-    public func explain(question: Question, selectedAnswer: String?) async throws -> String {
-        try await provider.explain(question: question, selectedAnswer: selectedAnswer)
+    public func explain(question: Question, selectedAnswer: String?, language: String = "en") async throws -> String {
+        try await provider.explain(question: question, selectedAnswer: selectedAnswer, language: language)
     }
 
-    public func chat(messages: [ChatMessage], question: Question) async throws -> String {
-        try await provider.chat(messages: messages, question: question)
+    public func chat(messages: [ChatMessage], question: Question, language: String = "en") async throws -> String {
+        try await provider.chat(messages: messages, question: question, language: language)
     }
 
     public func simplify(explanation: String) async throws -> String {

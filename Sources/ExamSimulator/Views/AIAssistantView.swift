@@ -3,18 +3,22 @@ import ExamSimulatorCore
 
 // MARK: - Container
 
-/// Inline AI chat panel embedded in study/review screens.
+/// AI chat sidebar panel embedded alongside the question in study/review screens.
 /// Use `.id(question.id)` at the call site to reset when the question changes.
 struct AIAssistantView: View {
     @StateObject private var viewModel: AIAssistantViewModel
     @EnvironmentObject private var loc: LocalizationService
 
-    init(aiService: AIStudyAssistantService, question: Question, selectedAnswer: String?) {
+    init(aiService: AIStudyAssistantService,
+         question: Question,
+         selectedAnswer: String?,
+         languageIsEnglish: Bool) {
         _viewModel = StateObject(
             wrappedValue: AIAssistantViewModel(
                 aiService: aiService,
                 question: question,
-                selectedAnswer: selectedAnswer
+                selectedAnswer: selectedAnswer,
+                languageIsEnglish: languageIsEnglish
             )
         )
     }
@@ -27,15 +31,14 @@ struct AIAssistantView: View {
             if let err = viewModel.error {
                 errorBanner(err)
             }
+            if viewModel.messages.isEmpty == false && !viewModel.isLoading {
+                suggestionChips
+                Divider()
+            }
             Divider()
             inputRow
         }
         .background(Color(nsColor: .controlBackgroundColor))
-        .clipShape(RoundedRectangle(cornerRadius: 12))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .strokeBorder(Color(nsColor: .separatorColor), lineWidth: 1)
-        )
         .task { await viewModel.loadInitialExplanation() }
     }
 
@@ -82,7 +85,6 @@ struct AIAssistantView: View {
                 }
                 .padding(12)
             }
-            .frame(minHeight: 120, maxHeight: 280)
             .onChange(of: viewModel.messages.count) {
                 withAnimation {
                     proxy.scrollTo("loading", anchor: .bottom)
@@ -125,7 +127,7 @@ struct AIAssistantView: View {
                     .textSelection(.enabled)
                     .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)
-                Spacer(minLength: 40)
+                Spacer(minLength: 0)
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 10)
@@ -133,7 +135,7 @@ struct AIAssistantView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
         } else {
             HStack {
-                Spacer(minLength: 40)
+                Spacer(minLength: 20)
                 Text(msg.content)
                     .font(.callout)
                     .textSelection(.enabled)
@@ -144,6 +146,39 @@ struct AIAssistantView: View {
                     .background(Color.accentColor.opacity(0.1))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+        }
+    }
+
+    // MARK: - Suggestion chips
+
+    private var suggestionKeys: [String] {
+        ["ai.suggestion.deepen",
+         "ai.suggestion.example",
+         "ai.suggestion.whyWrong",
+         "ai.suggestion.realWorld",
+         "ai.suggestion.simplify"]
+    }
+
+    private var suggestionChips: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 6) {
+                ForEach(suggestionKeys, id: \.self) { key in
+                    Button(loc.t(key)) {
+                        viewModel.quickSend(loc.t(key))
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.purple)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(Color.purple.opacity(0.08))
+                    .clipShape(Capsule())
+                    .overlay(Capsule().strokeBorder(Color.purple.opacity(0.2), lineWidth: 1))
+                    .disabled(viewModel.isLoading)
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
         }
     }
 

@@ -10,6 +10,10 @@ struct StudyView: View {
     @State private var showAIPanel = false
     @State private var showAINotConfigured = false
 
+    private var sidebarOpen: Bool {
+        showAIPanel && deps.isAIAvailable && viewModel.showExplanation
+    }
+
     var body: some View {
         if viewModel.isFinished, let result = viewModel.sessionResult {
             ResultView(
@@ -22,31 +26,59 @@ struct StudyView: View {
         }
     }
 
+    // MARK: - Main layout
+
     private var studyContent: some View {
         VStack(spacing: 0) {
             studyToolbar
             Divider()
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    if let question = viewModel.currentQuestion {
-                        questionHeader(question)
-                        questionText(question)
-                        alternativesList(question)
-                        if viewModel.showExplanation {
-                            explanationSection(question)
-                        }
-                    }
+            HStack(spacing: 0) {
+                mainScroll
+                if sidebarOpen, let question = viewModel.currentQuestion {
+                    Divider()
+                    aiSidebar(for: question)
+                        .transition(.move(edge: .trailing).combined(with: .opacity))
                 }
-                .padding(.horizontal, 40)
-                .padding(.vertical, 28)
-                .frame(maxWidth: 800)
-                .frame(maxWidth: .infinity)
             }
+            .animation(.easeInOut(duration: 0.25), value: sidebarOpen)
             Divider()
             navigationBar
         }
-        .frame(minWidth: 800, minHeight: 600)
+        .frame(minWidth: sidebarOpen ? 1160 : 800, minHeight: 600)
+        .animation(.easeInOut(duration: 0.25), value: sidebarOpen)
     }
+
+    private var mainScroll: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                if let question = viewModel.currentQuestion {
+                    questionHeader(question)
+                    questionText(question)
+                    alternativesList(question)
+                    if viewModel.showExplanation {
+                        explanationSection(question)
+                    }
+                }
+            }
+            .padding(.horizontal, sidebarOpen ? 24 : 40)
+            .padding(.vertical, 28)
+            .frame(maxWidth: sidebarOpen ? .infinity : 800)
+            .frame(maxWidth: .infinity)
+        }
+    }
+
+    private func aiSidebar(for question: Question) -> some View {
+        AIAssistantView(
+            aiService: deps.aiService,
+            question: question,
+            selectedAnswer: viewModel.selectedAnswer,
+            languageIsEnglish: viewModel.showEnglishExplanation
+        )
+        .id(question.id)
+        .frame(width: 340)
+    }
+
+    // MARK: - Toolbar
 
     private var studyToolbar: some View {
         HStack(spacing: 16) {
@@ -101,6 +133,8 @@ struct StudyView: View {
         .padding(.vertical, 12)
         .background(Color(nsColor: .windowBackgroundColor))
     }
+
+    // MARK: - Question content
 
     private func questionHeader(_ question: Question) -> some View {
         HStack {
@@ -177,21 +211,13 @@ struct StudyView: View {
             }
 
             noteSection(question)
-
-            if showAIPanel && deps.isAIAvailable {
-                AIAssistantView(
-                    aiService: deps.aiService,
-                    question: question,
-                    selectedAnswer: viewModel.selectedAnswer
-                )
-                .id(question.id)
-                .transition(.opacity.combined(with: .move(edge: .bottom)))
-            }
         }
         .padding(.top, 8)
         .transition(.opacity.combined(with: .move(edge: .bottom)))
         .animation(.easeOut(duration: 0.3), value: viewModel.showExplanation)
     }
+
+    // MARK: - Supporting views
 
     private var aiNotConfiguredPopover: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -268,6 +294,8 @@ struct StudyView: View {
                 }
         }
     }
+
+    // MARK: - Navigation bar
 
     private var navigationBar: some View {
         HStack {
