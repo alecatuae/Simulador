@@ -173,7 +173,7 @@ struct AIAssistantView: View {
                     .background(Color.purple.opacity(0.08))
                     .clipShape(Capsule())
                     .overlay(Capsule().strokeBorder(Color.purple.opacity(0.2), lineWidth: 1))
-                    .disabled(viewModel.isLoading)
+                    .disabled(viewModel.isLoading || viewModel.error != nil)
                     .buttonStyle(.plain)
                 }
             }

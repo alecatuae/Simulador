@@ -19,13 +19,15 @@ public enum AIProviderError: LocalizedError {
     case apiKeyMissing
     case requestFailed(String)
     case rateLimited
+    case quotaExceeded
 
     public var errorDescription: String? {
         switch self {
-        case .notConfigured:      return "AI provider is not configured"
-        case .apiKeyMissing:      return "API key is missing — configure it in Settings"
+        case .notConfigured:          return "AI provider is not configured"
+        case .apiKeyMissing:          return "API key is missing — configure it in Settings"
         case .requestFailed(let msg): return "Request failed: \(msg)"
-        case .rateLimited:        return "Rate limit exceeded. Please wait before trying again"
+        case .rateLimited:            return "Rate limit exceeded. Please wait a moment before trying again."
+        case .quotaExceeded:          return "OpenAI quota exhausted. Add credits at platform.openai.com/account/billing."
         }
     }
 }

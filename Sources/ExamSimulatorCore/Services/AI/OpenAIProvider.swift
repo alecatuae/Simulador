@@ -107,12 +107,20 @@ public final class OpenAIProvider: AIProvider {
 
         let (data, response) = try await URLSession.shared.data(for: request)
 
+        let httpCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+
         // Parse API-level error (may appear on 4xx/5xx)
         if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
            let error = json["error"] as? [String: Any],
            let message = error["message"] as? String {
-            let httpCode = (response as? HTTPURLResponse)?.statusCode ?? 0
-            if httpCode == 429 { throw AIProviderError.rateLimited }
+            if httpCode == 429 {
+                // OpenAI returns 429 for both rate limits and quota exhaustion.
+                // Distinguish by the error type/code field.
+                let errType = (error["type"] as? String) ?? ""
+                let errCode = (error["code"] as? String) ?? ""
+                let isQuota = errType == "insufficient_quota" || errCode == "insufficient_quota"
+                throw isQuota ? AIProviderError.quotaExceeded : AIProviderError.rateLimited
+            }
             throw AIProviderError.requestFailed(message)
         }
 
