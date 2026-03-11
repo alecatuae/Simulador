@@ -1,8 +1,37 @@
 import SwiftUI
+import AppKit
 import ExamSimulatorCore
+
+// AppDelegate handles proper keyboard focus acquisition when launched via `swift run`.
+final class AppDelegate: NSObject, NSApplicationDelegate {
+    private var windowObserver: NSObjectProtocol?
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        // SPM executables start with activationPolicy = .prohibited (no GUI focus).
+        // Setting .regular ensures the window server routes keyboard events to this process.
+        NSApp.setActivationPolicy(.regular)
+
+        // Wait for the first window to actually become key before requesting focus.
+        // This is more reliable than a fixed-delay asyncAfter because we react to the real event.
+        windowObserver = NotificationCenter.default.addObserver(
+            forName: NSWindow.didBecomeKeyNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] note in
+            guard let win = note.object as? NSWindow else { return }
+            NSRunningApplication.current.activate(options: [.activateIgnoringOtherApps])
+            win.makeKeyAndOrderFront(nil)
+            if let obs = self?.windowObserver {
+                NotificationCenter.default.removeObserver(obs)
+                self?.windowObserver = nil
+            }
+        }
+    }
+}
 
 @main
 struct ExamSimulatorApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var dependencies = AppDependencies()
 
     var body: some Scene {

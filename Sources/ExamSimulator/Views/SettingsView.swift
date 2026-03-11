@@ -1,7 +1,9 @@
 import SwiftUI
+import AppKit
 import ExamSimulatorCore
 
 struct SettingsView: View {
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var deps: AppDependencies
     @EnvironmentObject var loc: LocalizationService
 
@@ -9,6 +11,7 @@ struct SettingsView: View {
     @State private var isTesting = false
     @State private var testResult: TestResult? = nil
     @State private var showKey = false
+    @FocusState private var keyFieldFocused: Bool
 
     enum TestResult {
         case success(String)
@@ -36,7 +39,20 @@ struct SettingsView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 Spacer()
-                statusBadge
+                VStack(alignment: .trailing, spacing: 8) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title3)
+                            .foregroundStyle(.secondary)
+                            .contentShape(Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .help("Close")
+
+                    statusBadge
+                }
             }
             .padding(20)
 
@@ -48,15 +64,10 @@ struct SettingsView: View {
                     .font(.subheadline.weight(.semibold))
 
                 HStack(spacing: 8) {
-                    Group {
-                        if showKey {
-                            TextField(loc.t("settings.ai.apiKey.placeholder"), text: $apiKey)
-                                .font(.system(.body, design: .monospaced))
-                        } else {
-                            SecureField(loc.t("settings.ai.apiKey.placeholder"), text: $apiKey)
-                        }
-                    }
+                TextField(loc.t("settings.ai.apiKey.placeholder"), text: $apiKey)
+                    .font(.system(.body, design: .monospaced))
                     .textFieldStyle(.roundedBorder)
+                    .focused($keyFieldFocused)
 
                     Button {
                         showKey.toggle()
@@ -127,7 +138,12 @@ struct SettingsView: View {
             .background(Color(nsColor: .controlBackgroundColor))
         }
         .frame(width: 480)
-        .onAppear { apiKey = deps.loadAPIKey() }
+        .onAppear {
+            apiKey = deps.loadAPIKey()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                keyFieldFocused = true
+            }
+        }
     }
 
     // MARK: - Status badge
