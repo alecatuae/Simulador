@@ -15,12 +15,14 @@ struct DashboardView: View {
         case study(SessionContext)
         case exam(SessionContext)
         case browse(ExamBank)
+        case settings
         var id: String {
             switch self {
             case .sessionConfig(let m): return "config-\(m.rawValue)"
             case .study: return "study"
             case .exam: return "exam"
             case .browse: return "browse"
+            case .settings: return "settings"
             }
         }
     }
@@ -84,6 +86,10 @@ struct DashboardView: View {
                 .environmentObject(loc)
                 .environmentObject(deps)
                 .onDisappear { viewModel.loadData() }
+            case .settings:
+                SettingsView()
+                    .environmentObject(deps)
+                    .environmentObject(loc)
             }
         }
     }
@@ -100,11 +106,21 @@ struct DashboardView: View {
         .listStyle(.sidebar)
         .navigationTitle(loc.t("app.title"))
         .toolbar {
-            ToolbarItem {
+            ToolbarItem(placement: .automatic) {
                 Button { viewModel.loadData() } label: {
                     Image(systemName: "arrow.clockwise")
                 }
                 .help("Refresh")
+            }
+            ToolbarItem(placement: .automatic) {
+                Button { activeSheet = .settings } label: {
+                    Image(systemName: deps.isAIAvailable
+                          ? "gearshape.fill"
+                          : "gearshape")
+                    .foregroundStyle(deps.isAIAvailable ? Color.accentColor : Color.primary)
+                }
+                .help(loc.t("nav.settings"))
+                .keyboardShortcut(",", modifiers: .command)
             }
         }
     }
