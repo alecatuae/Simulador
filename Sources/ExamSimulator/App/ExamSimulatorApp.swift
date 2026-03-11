@@ -18,6 +18,12 @@ struct ExamSimulatorApp: App {
                 Button("About Exam Simulator") {}
             }
         }
+
+        Settings {
+            SettingsView()
+                .environmentObject(dependencies)
+                .environmentObject(dependencies.localization)
+        }
     }
 }
 

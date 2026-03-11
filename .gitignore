@@ -46,6 +46,9 @@ DerivedData/
 Secrets/
 secrets/
 
+# App configuration (may contain API keys — use AppConfig.template.json as reference)
+Sources/ExamSimulator/Resources/AppConfig.json
+
 # ===========================
 # Editor
 # ===========================

@@ -4,9 +4,11 @@ import ExamSimulatorCore
 struct ReviewView: View {
     @StateObject var viewModel: ReviewViewModel
     @EnvironmentObject var loc: LocalizationService
+    @EnvironmentObject var deps: AppDependencies
     @Environment(\.dismiss) var dismiss
 
     @State private var showEnglishExplanation = true
+    @State private var showAIPanel = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -61,6 +63,18 @@ struct ReviewView: View {
             }
 
             Spacer()
+
+            if deps.isAIAvailable, viewModel.totalFiltered > 0 {
+                Button {
+                    withAnimation(.easeInOut(duration: 0.25)) { showAIPanel.toggle() }
+                } label: {
+                    Label(loc.t("ai.title"), systemImage: "sparkles")
+                        .font(.subheadline)
+                        .foregroundStyle(showAIPanel ? Color.purple : Color.secondary)
+                }
+                .buttonStyle(.plain)
+                .help(loc.t("ai.toggle"))
+            }
 
             if viewModel.totalFiltered > 0 {
                 Text("\(viewModel.currentIndex + 1) / \(viewModel.totalFiltered)")
@@ -176,12 +190,24 @@ struct ReviewView: View {
                 .background(Color(nsColor: .controlColor))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             }
+
+            if showAIPanel, deps.isAIAvailable,
+               let result = viewModel.currentResult {
+                AIAssistantView(
+                    aiService: deps.aiService,
+                    question: question,
+                    selectedAnswer: result.selectedAnswer
+                )
+                .id(question.id)
+                .transition(.opacity.combined(with: .move(edge: .bottom)))
+            }
         }
     }
 
     private var navigationBar: some View {
         HStack {
             Button(loc.t("exam.previous")) {
+                showAIPanel = false
                 viewModel.previous()
             }
             .disabled(viewModel.isFirstItem)
@@ -190,6 +216,7 @@ struct ReviewView: View {
             Spacer()
 
             Button(loc.t("exam.next")) {
+                showAIPanel = false
                 viewModel.next()
             }
             .buttonStyle(.borderedProminent)

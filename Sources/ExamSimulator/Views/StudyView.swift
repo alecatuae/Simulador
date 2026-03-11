@@ -4,7 +4,10 @@ import ExamSimulatorCore
 struct StudyView: View {
     @StateObject var viewModel: StudyViewModel
     @EnvironmentObject var loc: LocalizationService
+    @EnvironmentObject var deps: AppDependencies
     @Environment(\.dismiss) var dismiss
+
+    @State private var showAIPanel = false
 
     var body: some View {
         if viewModel.isFinished, let result = viewModel.sessionResult {
@@ -60,6 +63,18 @@ struct StudyView: View {
                 .foregroundStyle(.secondary)
 
             Spacer()
+
+            if deps.isAIAvailable && viewModel.showExplanation {
+                Button {
+                    withAnimation(.easeInOut(duration: 0.25)) { showAIPanel.toggle() }
+                } label: {
+                    Label(loc.t("ai.title"), systemImage: "sparkles")
+                        .font(.subheadline)
+                        .foregroundStyle(showAIPanel ? Color.purple : Color.secondary)
+                }
+                .buttonStyle(.plain)
+                .help(loc.t("ai.toggle"))
+            }
 
             Button {
                 viewModel.toggleBookmark()
@@ -150,6 +165,16 @@ struct StudyView: View {
             }
 
             noteSection(question)
+
+            if showAIPanel && deps.isAIAvailable {
+                AIAssistantView(
+                    aiService: deps.aiService,
+                    question: question,
+                    selectedAnswer: viewModel.selectedAnswer
+                )
+                .id(question.id)
+                .transition(.opacity.combined(with: .move(edge: .bottom)))
+            }
         }
         .padding(.top, 8)
         .transition(.opacity.combined(with: .move(edge: .bottom)))
@@ -211,6 +236,7 @@ struct StudyView: View {
     private var navigationBar: some View {
         HStack {
             Button(loc.t("exam.previous")) {
+                showAIPanel = false
                 viewModel.previous()
             }
             .disabled(viewModel.isFirstQuestion)
@@ -226,6 +252,7 @@ struct StudyView: View {
             } else {
                 Button(viewModel.hasAnswered ? loc.t("exam.next") : loc.t("study.showExplanation")) {
                     if viewModel.hasAnswered {
+                        showAIPanel = false
                         viewModel.next()
                     }
                 }
