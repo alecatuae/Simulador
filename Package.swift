@@ -17,6 +17,8 @@ let package = Package(
                 .copy("Resources/QAs"),
                 .copy("Resources/Languages"),
                 .copy("Resources/AppConfig.json"),
+                .process("Resources/Assets.xcassets"),
+                .copy("Resources/AppIcon.png"),
             ]
         ),
         .target(

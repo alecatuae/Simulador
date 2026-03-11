@@ -11,6 +11,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // Setting .regular ensures the window server routes keyboard events to this process.
         NSApp.setActivationPolicy(.regular)
 
+        // Set app icon from the bundled PNG resource.
+        // This is required for SPM executables launched via `swift run` since
+        // they don't go through the standard .app bundle icon resolution path.
+        if let url = Bundle.module.url(forResource: "AppIcon", withExtension: "png"),
+           let image = NSImage(contentsOf: url) {
+            NSApp.applicationIconImage = image
+        }
+
         // Wait for the first window to actually become key before requesting focus.
         // This is more reliable than a fixed-delay asyncAfter because we react to the real event.
         windowObserver = NotificationCenter.default.addObserver(
