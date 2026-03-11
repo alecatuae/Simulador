@@ -12,8 +12,6 @@ public final class ExamEngine {
         switch filter {
         case .all:
             return questions
-        case .bySimulado(let number):
-            return questions.filter { $0.simulado == number }
         case .byDomain(let domain):
             return questions.filter { $0.domain == domain }
         case .incorrectHistory:
@@ -62,7 +60,6 @@ public final class ExamEngine {
                 let newCorrect = reassigned.first(where: { $0.isCorrect })?.letter ?? question.correctAnswer
                 return Question(
                     id: question.id,
-                    simulado: question.simulado,
                     domain: question.domain,
                     question: question.question,
                     alternatives: reassigned,

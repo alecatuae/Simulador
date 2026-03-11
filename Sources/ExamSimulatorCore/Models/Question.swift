@@ -2,7 +2,6 @@ import Foundation
 
 public struct Question: Codable, Identifiable, Hashable {
     public let id: Int           // immutable — unique key
-    public var simulado: Int
     public var domain: String
     public var question: String
     public var alternatives: [Alternative]
@@ -13,7 +12,6 @@ public struct Question: Codable, Identifiable, Hashable {
 
     public init(
         id: Int,
-        simulado: Int,
         domain: String,
         question: String,
         alternatives: [Alternative],
@@ -23,7 +21,6 @@ public struct Question: Codable, Identifiable, Hashable {
         note: String
     ) {
         self.id = id
-        self.simulado = simulado
         self.domain = domain
         self.question = question
         self.alternatives = alternatives
@@ -34,7 +31,7 @@ public struct Question: Codable, Identifiable, Hashable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, simulado, domain, question, alternatives
+        case id, domain, question, alternatives
         case correctAnswer = "correct_answer"
         case explanationEn = "explanation_en"
         case explanationPtBr = "explanation_ptbr"

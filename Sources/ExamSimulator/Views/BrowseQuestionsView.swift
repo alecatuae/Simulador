@@ -205,14 +205,6 @@ private struct QuestionRowView: View {
                 .foregroundStyle(.secondary)
                 .frame(width: 40, alignment: .trailing)
 
-            Text("S\(question.simulado)")
-                .font(.caption.weight(.semibold))
-                .padding(.horizontal, 8)
-                .padding(.vertical, 3)
-                .background(Color.accentColor.opacity(0.12))
-                .foregroundStyle(Color.accentColor)
-                .clipShape(Capsule())
-
             Text(question.domain)
                 .font(.caption)
                 .foregroundStyle(.secondary)
@@ -312,35 +304,26 @@ struct QuestionEditorSheet: View {
 
     private var metadataSection: some View {
         GroupBox(loc.t("editor.metadata")) {
-            VStack(alignment: .leading, spacing: 14) {
-                HStack(spacing: 12) {
-                    Text(loc.t("editor.domain"))
-                        .font(.subheadline)
-                        .frame(width: 90, alignment: .leading)
+            HStack(spacing: 12) {
+                Text(loc.t("editor.domain"))
+                    .font(.subheadline)
+                    .frame(width: 90, alignment: .leading)
 
-                    TextField(loc.t("editor.domain"), text: $draft.domain)
-                        .textFieldStyle(.roundedBorder)
+                TextField(loc.t("editor.domain"), text: $draft.domain)
+                    .textFieldStyle(.roundedBorder)
 
-                    Menu {
-                        ForEach(availableDomains, id: \.self) { d in
-                            Button(d) { draft.domain = d }
-                        }
-                    } label: {
-                        Image(systemName: "chevron.down.circle")
-                            .foregroundStyle(Color.accentColor)
+                Menu {
+                    ForEach(availableDomains, id: \.self) { d in
+                        Button(d) { draft.domain = d }
                     }
-                    .buttonStyle(.plain)
-                    .menuStyle(.borderlessButton)
-                    .fixedSize()
-                    .help(loc.t("editor.domainPicker"))
+                } label: {
+                    Image(systemName: "chevron.down.circle")
+                        .foregroundStyle(Color.accentColor)
                 }
-
-                HStack(spacing: 12) {
-                    Text(loc.t("editor.simulado"))
-                        .font(.subheadline)
-                        .frame(width: 90, alignment: .leading)
-                    Stepper("Simulado \(draft.simulado)", value: $draft.simulado, in: 1...99)
-                }
+                .buttonStyle(.plain)
+                .menuStyle(.borderlessButton)
+                .fixedSize()
+                .help(loc.t("editor.domainPicker"))
             }
             .padding(12)
         }
@@ -459,7 +442,6 @@ struct QuestionEditorSheet: View {
         }
         return Question(
             id: draft.id,
-            simulado: draft.simulado,
             domain: draft.domain,
             question: draft.question,
             alternatives: synced,

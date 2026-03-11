@@ -146,7 +146,6 @@ struct DashboardView: View {
             HStack(spacing: 16) {
                 Label("\(bank.metadata.totalQuestions) \(loc.t("dashboard.questions"))", systemImage: "doc.text")
                 Label("\(bank.metadata.domains.count) \(loc.t("dashboard.domains"))", systemImage: "tag")
-                Label("\(bank.metadata.simulados.count) simulados", systemImage: "list.number")
             }
             .font(.subheadline)
             .foregroundStyle(.secondary)

@@ -8,7 +8,6 @@ public enum SessionMode: String, Codable, CaseIterable {
 
 public enum QuestionFilter: Hashable {
     case all
-    case bySimulado(Int)
     case byDomain(String)
     case incorrectHistory
     case bookmarked

@@ -6,18 +6,6 @@
     "format": "Perguntas e alternativas em inglês. Explicações disponíveis em inglês e português (pt-br).",
     "passing_score_percent": 70,
     "total_questions": 20,
-    "simulados": [
-      {
-        "number": 1,
-        "range": "1-10",
-        "questions": 10
-      },
-      {
-        "number": 2,
-        "range": "11-20",
-        "questions": 10
-      }
-    ],
     "domains": [
       {
         "name": "AI & Machine Learning Fundamentals",
@@ -36,7 +24,6 @@
   "questions": [
     {
       "id": 1,
-      "simulado": 1,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "Which type of machine learning uses labeled training data to teach a model to map inputs to known outputs?",
       "alternatives": [
@@ -68,7 +55,6 @@
     },
     {
       "id": 2,
-      "simulado": 1,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "What term describes the situation where a machine learning model performs very well on training data but poorly on unseen data?",
       "alternatives": [
@@ -100,7 +86,6 @@
     },
     {
       "id": 3,
-      "simulado": 1,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "In a neural network, what is the role of an activation function?",
       "alternatives": [
@@ -132,7 +117,6 @@
     },
     {
       "id": 4,
-      "simulado": 1,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "What does one training 'epoch' represent in the context of model training?",
       "alternatives": [
@@ -164,7 +148,6 @@
     },
     {
       "id": 5,
-      "simulado": 1,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "What is the primary purpose of gradient descent in model training?",
       "alternatives": [
@@ -196,7 +179,6 @@
     },
     {
       "id": 6,
-      "simulado": 1,
       "domain": "Cloud & Infrastructure",
       "question": "What is horizontal scaling (scaling out) in the context of a distributed system?",
       "alternatives": [
@@ -228,7 +210,6 @@
     },
     {
       "id": 7,
-      "simulado": 1,
       "domain": "Cloud & Infrastructure",
       "question": "What is the primary function of a load balancer in a web application architecture?",
       "alternatives": [
@@ -260,7 +241,6 @@
     },
     {
       "id": 8,
-      "simulado": 1,
       "domain": "Cloud & Infrastructure",
       "question": "Which concept describes packaging an application together with all its dependencies and configuration so that it runs consistently across different environments?",
       "alternatives": [
@@ -292,7 +272,6 @@
     },
     {
       "id": 9,
-      "simulado": 1,
       "domain": "Data Management",
       "question": "In data engineering, what does the acronym ETL stand for, and what does it describe?",
       "alternatives": [
@@ -324,7 +303,6 @@
     },
     {
       "id": 10,
-      "simulado": 1,
       "domain": "Data Management",
       "question": "What is the main benefit of partitioning a large database table?",
       "alternatives": [
@@ -356,7 +334,6 @@
     },
     {
       "id": 11,
-      "simulado": 2,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "What is transfer learning, and what is its main advantage?",
       "alternatives": [
@@ -388,7 +365,6 @@
     },
     {
       "id": 12,
-      "simulado": 2,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "Which metric is most appropriate for evaluating a binary classification model on a highly imbalanced dataset where false negatives are especially costly?",
       "alternatives": [
@@ -420,7 +396,6 @@
     },
     {
       "id": 13,
-      "simulado": 2,
       "domain": "AI & Machine Learning Fundamentals",
       "question": "What distinguishes a hyperparameter from a model parameter?",
       "alternatives": [
@@ -452,7 +427,6 @@
     },
     {
       "id": 14,
-      "simulado": 2,
       "domain": "Cloud & Infrastructure",
       "question": "What does 'high availability' mean in the context of system design?",
       "alternatives": [
@@ -484,7 +458,6 @@
     },
     {
       "id": 15,
-      "simulado": 2,
       "domain": "Cloud & Infrastructure",
       "question": "What is Infrastructure as Code (IaC)?",
       "alternatives": [
@@ -516,7 +489,6 @@
     },
     {
       "id": 16,
-      "simulado": 2,
       "domain": "Cloud & Infrastructure",
       "question": "What is the difference between latency and throughput in a network or system context?",
       "alternatives": [
@@ -548,7 +520,6 @@
     },
     {
       "id": 17,
-      "simulado": 2,
       "domain": "Cloud & Infrastructure",
       "question": "Which auto-scaling strategy adds or removes compute instances based on observed metrics such as CPU utilization or request rate?",
       "alternatives": [
@@ -580,7 +551,6 @@
     },
     {
       "id": 18,
-      "simulado": 2,
       "domain": "Data Management",
       "question": "What is the key difference between structured and unstructured data?",
       "alternatives": [
@@ -612,7 +582,6 @@
     },
     {
       "id": 19,
-      "simulado": 2,
       "domain": "Data Management",
       "question": "What is the purpose of data normalization in a relational database design?",
       "alternatives": [
@@ -644,7 +613,6 @@
     },
     {
       "id": 20,
-      "simulado": 2,
       "domain": "Data Management",
       "question": "In the context of a data pipeline, what does 'data lineage' refer to?",
       "alternatives": [

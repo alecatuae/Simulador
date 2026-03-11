@@ -214,10 +214,6 @@ The canonical data format is defined by `NCA-AIIO_QA.json`.
     "format": "...",
     "passing_score_percent": 80,
     "total_questions": 130,
-    "simulados": [
-      { "number": 1, "range": "1-65",   "questions": 65 },
-      { "number": 2, "range": "66-130", "questions": 65 }
-    ],
     "domains": [
       { "name": "Introduction to AI", "count": 18 },
       { "name": "AI Infrastructure",  "count": 73 },
@@ -248,7 +244,6 @@ The canonical data format is defined by `NCA-AIIO_QA.json`.
 ```json
 {
   "id": 1,
-  "simulado": 1,
   "domain": "AI Operations",
   "question": "Question text in English",
   "alternatives": [
@@ -271,8 +266,6 @@ The canonical data format is defined by `NCA-AIIO_QA.json`.
     and used only for display rendering
 -   `note` in the JSON is **read-only dataset content** — user
     annotations are stored separately in `UserProgress.userNotes`
--   The `simulado` field is a **session filter**, not a separate entity.
-    Users may choose: all questions, Simulado 1, Simulado 2, or by domain
 
 ------------------------------------------------------------------------
 
@@ -355,8 +348,7 @@ Actions:
 
 When starting a session, the user selects:
 
--   **Question scope:** All | Simulado 1 | Simulado 2 | By Domain |
-    Bookmarked | Incorrect History
+-   **Question scope:** All | By Domain | Bookmarked | Incorrect History
 -   **Mode:** Exam (timed, no feedback) | Study (immediate feedback)
 -   **Order:** Random (shuffled) | Sequential (original order)
 -   **Question count:** 1 … N (defaults to all available for the
@@ -365,7 +357,6 @@ When starting a session, the user selects:
 `QuestionFilter` enum:
 
     case all
-    case bySimulado(Int)
     case byDomain(String)
     case incorrectHistory
     case bookmarked
@@ -402,7 +393,7 @@ list of every question in the selected exam bank.
     -   Changes are tracked as dirty edits and saved with the "Save" button
 
 -   **Question list** — each row shows:
-    -   `#id`  ·  Simulado badge  ·  Domain  ·  First ~2 lines of question text
+    -   `#id`  ·  Domain  ·  First ~2 lines of question text
     -   Pencil icon on right to indicate tappable row
     -   Orange left-border stripe when the row has unsaved edits
 
@@ -415,7 +406,6 @@ Fields exposed for editing:
 | Field | Control |
 |---|---|
 | Domain | TextField + dropdown menu (pick existing or type new) |
-| Simulado | Stepper |
 | Question text | TextEditor |
 | Alternative A–E text | TextField per alternative |
 | Correct answer | Circle button (radio-style) per alternative |

@@ -13,9 +13,6 @@ struct ExamBankTests {
         "source": "Unit Test",
         "format": "English questions",
         "total_questions": 2,
-        "simulados": [
-          { "number": 1, "range": "1-2", "questions": 2 }
-        ],
         "domains": [
           { "name": "Domain A", "count": 2 }
         ]
@@ -23,7 +20,6 @@ struct ExamBankTests {
       "questions": [
         {
           "id": 1,
-          "simulado": 1,
           "domain": "Domain A",
           "question": "What is 2+2?",
           "alternatives": [
@@ -60,7 +56,7 @@ struct ExamBankTests {
     @Test func explanationFallbackToEnglish() {
         let alt = Alternative(letter: "A", text: "Answer", isCorrect: true)
         let question = Question(
-            id: 1, simulado: 1, domain: "Test",
+            id: 1, domain: "Test",
             question: "Q?",
             alternatives: [alt],
             correctAnswer: "A",
@@ -75,7 +71,7 @@ struct ExamBankTests {
     @Test func explanationPtBrReturned() {
         let alt = Alternative(letter: "A", text: "Answer", isCorrect: true)
         let question = Question(
-            id: 1, simulado: 1, domain: "Test",
+            id: 1, domain: "Test",
             question: "Q?",
             alternatives: [alt],
             correctAnswer: "A",

@@ -37,7 +37,6 @@ struct SessionConfigSheet: View {
 
     enum FilterOption: Identifiable, Hashable {
         case all
-        case simulado(Int)
         case domain(String)
         case bookmarked
         case incorrect
@@ -45,7 +44,6 @@ struct SessionConfigSheet: View {
         var id: String {
             switch self {
             case .all: return "all"
-            case .simulado(let n): return "sim-\(n)"
             case .domain(let d): return "dom-\(d)"
             case .bookmarked: return "bookmarked"
             case .incorrect: return "incorrect"
@@ -55,7 +53,6 @@ struct SessionConfigSheet: View {
         func label(loc: LocalizationService) -> String {
             switch self {
             case .all: return loc.t("session.scope.all")
-            case .simulado(let n): return loc.t("session.scope.simulado\(n)")
             case .domain(let d): return d
             case .bookmarked: return loc.t("session.scope.bookmarked")
             case .incorrect: return loc.t("session.scope.incorrect")
@@ -65,7 +62,6 @@ struct SessionConfigSheet: View {
         var questionFilter: QuestionFilter {
             switch self {
             case .all: return .all
-            case .simulado(let n): return .bySimulado(n)
             case .domain(let d): return .byDomain(d)
             case .bookmarked: return .bookmarked
             case .incorrect: return .incorrectHistory
@@ -75,9 +71,6 @@ struct SessionConfigSheet: View {
 
     private var filterOptions: [FilterOption] {
         var options: [FilterOption] = [.all]
-        for sim in bank.metadata.simulados {
-            options.append(.simulado(sim.number))
-        }
         for domain in bank.metadata.domains.map({ $0.name }).sorted() {
             options.append(.domain(domain))
         }

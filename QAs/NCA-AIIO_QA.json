@@ -5,18 +5,6 @@
     "source": "Practice Exams — NVIDIA AI Infrastructure NCA-AIIO 2026 (Udemy)",
     "format": "Perguntas e alternativas em inglês (idioma original). Explicações traduzidas para português (pt-br).",
     "total_questions": 130,
-    "simulados": [
-      {
-        "number": 1,
-        "range": "1-65",
-        "questions": 65
-      },
-      {
-        "number": 2,
-        "range": "66-130",
-        "questions": 65
-      }
-    ],
     "domains": [
       {
         "name": "Introduction to AI",
@@ -35,7 +23,6 @@
   "questions": [
     {
       "id": 1,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "What is the primary purpose of dynamic batching in Triton Inference Server during production deployment?",
       "alternatives": [
@@ -67,7 +54,6 @@
     },
     {
       "id": 2,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of NVLink in an intra-node use case for AI workloads?",
       "alternatives": [
@@ -99,7 +85,6 @@
     },
     {
       "id": 3,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of using NVLink for intra-node communication and InfiniBand for inter-node communication in multi-GPU AI training clusters?",
       "alternatives": [
@@ -131,7 +116,6 @@
     },
     {
       "id": 4,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "What is the primary purpose of AI transparency in machine learning systems?",
       "alternatives": [
@@ -163,7 +147,6 @@
     },
     {
       "id": 5,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "What is the primary purpose of NVIDIA GPU Operator in Kubernetes environments?",
       "alternatives": [
@@ -195,7 +178,6 @@
     },
     {
       "id": 6,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A company deploys recommendation systems across three platforms: e-commerce (collaborative filtering with 50M users), streaming (content-based filtering with 10M videos), and advertising (real-time bidding with <10ms latency). Each uses separate H100 clusters for inference. Which optimization approach provides the MOST significant performance improvement across all three platforms?",
       "alternatives": [
@@ -227,7 +209,6 @@
     },
     {
       "id": 7,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the HBM3 memory bandwidth specification for the NVIDIA H100 GPU in DGX systems?",
       "alternatives": [
@@ -259,7 +240,6 @@
     },
     {
       "id": 8,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "A healthcare team is building a patient diagnosis system. The lead architect states: \"We'll use neural networks for pattern recognition in medical images, gradient boosting for structured lab data analysis, and rule-based expert systems for treatment recommendations.\" Which statement correctly describes this approach in terms of AI/ML/DL hierarchy?",
       "alternatives": [
@@ -291,7 +271,6 @@
     },
     {
       "id": 9,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a 16-node H100 cluster for LLM training and evaluating network fabrics for multi-node collective operations. Three approaches are proposed: NDR InfiniBand at 400 Gbps per port, HDR InfiniBand at 200 Gbps per port, or 400 Gbps Ethernet with RoCE v2. Which approach provides optimal bandwidth and latency for NCCL all-reduce operations?",
       "alternatives": [
@@ -323,7 +302,6 @@
     },
     {
       "id": 10,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a multi-tenant inference service where different customers require isolated GPU resources with guaranteed performance SLAs for running various LLM workloads. Which H100 capability would you use to partition a single GPU while ensuring predictable latency for each tenant?",
       "alternatives": [
@@ -355,7 +333,6 @@
     },
     {
       "id": 11,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of InfiniBand when connecting multiple DGX systems in a multi-node AI training cluster?",
       "alternatives": [
@@ -387,7 +364,6 @@
     },
     {
       "id": 12,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the GPU configuration in the NVIDIA DGX H100 system?",
       "alternatives": [
@@ -419,7 +395,6 @@
     },
     {
       "id": 13,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "Which statement best describes Base Command Manager's orchestration support for workload scheduling?",
       "alternatives": [
@@ -451,7 +426,6 @@
     },
     {
       "id": 14,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A team is implementing a real-time recommendation system that must process 10,000 concurrent user requests, each requiring embedding lookups and similarity calculations. They debate between deploying on 16-core CPUs with sequential processing or H100 GPUs with 16,896 CUDA cores. Which architectural approach maximizes throughput for this massively parallel workload?",
       "alternatives": [
@@ -483,7 +457,6 @@
     },
     {
       "id": 15,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "Your team is troubleshooting intermittent OOM errors during LLM fine-tuning on an H100 cluster. The training script occasionally crashes after several hours. Which nvidia-smi monitoring approach would most effectively capture GPU memory patterns to identify the root cause?",
       "alternatives": [
@@ -515,7 +488,6 @@
     },
     {
       "id": 16,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is evaluating three approaches to achieve 32 petaFLOPS FP8 compute performance for LLM training: (A) single DGX H100 system, (B) four networked servers with dual H100 GPUs each, or (C) eight standalone workstations with single H100 GPUs. Which configuration optimally delivers the 32 petaFLOPS requirement?",
       "alternatives": [
@@ -547,7 +519,6 @@
     },
     {
       "id": 17,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "Which programming languages provide native bindings for DCGM API access to enable programmatic monitoring and management of NVIDIA GPUs?",
       "alternatives": [
@@ -579,7 +550,6 @@
     },
     {
       "id": 18,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your organization is evaluating DGX SuperPOD configurations for large-scale LLM training workloads requiring 1 ExaFLOP of compute performance at FP8 precision. Which DGX SuperPOD Scalable Unit (SU) configuration best meets this performance requirement?",
       "alternatives": [
@@ -611,7 +581,6 @@
     },
     {
       "id": 19,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a multi-GPU H100 training cluster for LLaMA 70B fine-tuning. The infrastructure architect proposes using PCIe Gen5 switches for GPU-to-GPU communication to reduce costs compared to NVLink fabric. Given that NVLink 4.0 provides 900 GB/s bandwidth versus PCIe Gen5's 128 GB/s, what is the critical performance impact of this decision?",
       "alternatives": [
@@ -643,7 +612,6 @@
     },
     {
       "id": 20,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A team is establishing a development to production pipeline for LLM fine-tuning workloads on H100 clusters. They need automated model versioning, experiment tracking, and seamless deployment to Triton Inference Server. Which technology stack best supports this end-to-end pipeline?",
       "alternatives": [
@@ -675,7 +643,6 @@
     },
     {
       "id": 21,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "Your H100 GPU shows only 35% utilization during LLM training, while CPU usage spikes to 95% during data loading phases. Profiling reveals the GPU frequently waits between batches. Which approach would most effectively diagnose and resolve this bottleneck?",
       "alternatives": [
@@ -707,7 +674,6 @@
     },
     {
       "id": 22,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a distributed training cluster with 64 H100 GPUs across 8 nodes for LLM training using NCCL. The workload requires frequent all-reduce operations with sub-10 microsecond latency for gradient synchronization. Which network configuration best achieves this microsecond-level latency requirement?",
       "alternatives": [
@@ -739,7 +705,6 @@
     },
     {
       "id": 23,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "A robotics team is developing an autonomous warehouse robot that must learn optimal navigation paths through trial and error, receiving rewards for efficient deliveries and penalties for collisions. Which machine learning type is most appropriate for this scenario?",
       "alternatives": [
@@ -771,7 +736,6 @@
     },
     {
       "id": 24,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A computer vision team needs to optimize their ResNet-50 object detection model currently running on CPU, achieving 5 FPS throughput. They require real-time performance (30+ FPS) for production deployment on NVIDIA H100 GPUs. Which optimization approach would achieve inference acceleration up to 40x versus CPU?",
       "alternatives": [
@@ -803,7 +767,6 @@
     },
     {
       "id": 25,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "What is the primary reason for using high precision formats like FP32, FP16, or BF16 during neural network training?",
       "alternatives": [
@@ -835,7 +798,6 @@
     },
     {
       "id": 26,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "A healthcare AI system processes patient medical records for disease prediction. Which technology is MOST effective for protecting sensitive patient information while enabling model training on NVIDIA infrastructure?",
       "alternatives": [
@@ -867,7 +829,6 @@
     },
     {
       "id": 27,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A data science team needs to accelerate ETL pipelines for structured datasets and train machine learning models on tabular data using GPUs. They require pandas-like DataFrame operations and scikit-learn compatible algorithms. Which CUDA-based approach foundationally enables these framework capabilities across their workflow?",
       "alternatives": [
@@ -899,7 +860,6 @@
     },
     {
       "id": 28,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "A healthcare AI team discovers their diagnostic model performs poorly on underrepresented patient demographics. During training data analysis, they find 85% of samples come from a single geographic region. Which approach most effectively addresses this training data bias?",
       "alternatives": [
@@ -931,7 +891,6 @@
     },
     {
       "id": 29,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A media production company needs a single GPU solution for real-time ray tracing rendering and simultaneous AI inference for content generation workflows. Their workload alternates between 3D visualization tasks and running stable diffusion models. What is the critical component of the NVIDIA L40S that makes it optimal for this mixed workload scenario?",
       "alternatives": [
@@ -963,7 +922,6 @@
     },
     {
       "id": 30,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A data center manager deploys 32 DGX H100 systems for LLM training workloads. Current monitoring shows GPU utilization at 65%, with significant idle time during data loading phases. Which approach most effectively improves PUE while maintaining training throughput?",
       "alternatives": [
@@ -995,7 +953,6 @@
     },
     {
       "id": 31,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A team needs to deploy NGC-optimized containers for TensorRT-LLM inference across AWS, Azure, and GCP environments. Which technology provides the most consistent deployment experience while leveraging cloud-native GPU resources?",
       "alternatives": [
@@ -1027,7 +984,6 @@
     },
     {
       "id": 32,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What memory bandwidth does the NVIDIA H100 GPU achieve with its HBM3 memory subsystem?",
       "alternatives": [
@@ -1059,7 +1015,6 @@
     },
     {
       "id": 33,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A team is deploying containerized LLM inference workloads on H100 GPUs. They compare three approaches: Docker with --gpus flag, NVIDIA Container Toolkit with CDI, and native deployment without containers. Which approach provides optimal GPU access while maintaining container isolation and supporting MIG configurations?",
       "alternatives": [
@@ -1091,7 +1046,6 @@
     },
     {
       "id": 34,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A DGX SuperPOD cluster experiences 35% lower all-reduce bandwidth than expected during multi-node LLM training. Network diagnostics show ConnectX-7 adapters are active, but throughput peaks at 2.1 Tbit/s per adapter instead of the theoretical 3.2 Tbit/s. What is the most likely critical component causing this performance degradation?",
       "alternatives": [
@@ -1123,7 +1077,6 @@
     },
     {
       "id": 35,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of implementing an out-of-band (OOB) network for managing GPU infrastructure?",
       "alternatives": [
@@ -1155,7 +1108,6 @@
     },
     {
       "id": 36,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your datacenter team is planning rack infrastructure for a new AI training cluster with DGX H100 systems. Each rack has a 40kW power capacity with N+1 redundancy cooling. Which deployment configuration maximizes system density while maintaining safe power margins?",
       "alternatives": [
@@ -1187,7 +1139,6 @@
     },
     {
       "id": 37,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "What is the NVIDIA NGC catalog in the context of the NVIDIA Software Stack?",
       "alternatives": [
@@ -1219,7 +1170,6 @@
     },
     {
       "id": 38,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "A healthcare organization is deploying a diagnostic system that analyzes X-ray and MRI scans to detect tumors in real-time during patient consultations. The system must process high-resolution medical images with minimal latency while maintaining accuracy. Which computer vision approach is MOST appropriate for this medical imaging application?",
       "alternatives": [
@@ -1251,7 +1201,6 @@
     },
     {
       "id": 39,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of storage acceleration on NVIDIA BlueField DPU when implementing NVMe-oF?",
       "alternatives": [
@@ -1283,7 +1232,6 @@
     },
     {
       "id": 40,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "An AI team needs an interactive development environment in Base Command Manager for rapid prototyping of multi-GPU training scripts with H100 GPUs. Compare approaches: (A) Custom Docker with Jupyter installed, (B) BCM-managed JupyterLab with persistent workspaces, (C) Local JupyterLab with SSH tunneling to cluster. Which approach optimally balances GPU access, reproducibility, and team collaboration?",
       "alternatives": [
@@ -1315,7 +1263,6 @@
     },
     {
       "id": 41,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "An organization is deploying a DGX SuperPOD with multiple Scalable Units (SUs) for distributed LLM training. Each SU contains 32 DGX H100 systems providing 256 GPUs total. Which networking technology is most critical for enabling high-bandwidth, low-latency GPU-to-GPU communication across all 256 GPUs within a single SU?",
       "alternatives": [
@@ -1347,7 +1294,6 @@
     },
     {
       "id": 42,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a 16-node H100 cluster with InfiniBand HDR networking for training a 175B parameter LLM using NCCL. Training performance shows CPU bottlenecks during cross-node gradient synchronization. Which technique would eliminate CPU involvement in inter-node GPU communication?",
       "alternatives": [
@@ -1379,7 +1325,6 @@
     },
     {
       "id": 43,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A cloud service provider needs to run multiple customer inference workloads on H100 GPUs while guaranteeing each customer dedicated compute resources and strict isolation. Which NVIDIA technology provides hardware-level partitioning with dedicated streaming multiprocessors, L2 cache, and memory controllers per instance?",
       "alternatives": [
@@ -1411,7 +1356,6 @@
     },
     {
       "id": 44,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A research team is planning infrastructure for training a 2-trillion parameter multimodal foundation model in 2026, requiring unprecedented compute density and memory bandwidth. The model will use FP4 precision training and needs efficient scaling across 512 GPUs. Which GPU architecture would be most appropriate for this next-generation AI workload?",
       "alternatives": [
@@ -1443,7 +1387,6 @@
     },
     {
       "id": 45,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A financial services company is deploying a multi-tenant AI inference cluster on H100 GPUs with strict data isolation requirements. Network traffic must be encrypted and inspected for threats without impacting GPU compute performance. Which NVIDIA BlueField DPU security function best addresses this requirement?",
       "alternatives": [
@@ -1475,7 +1418,6 @@
     },
     {
       "id": 46,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A DGX H100 system running distributed LLM training reports memory allocation failures when attempting to load a 65B parameter model across all GPUs using tensor parallelism. The training script logs indicate each GPU requires 85GB for model weights and optimizer states. What is the most likely cause?",
       "alternatives": [
@@ -1507,7 +1449,6 @@
     },
     {
       "id": 47,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A data center is deploying a cluster of 64 H100 GPUs for LLM training, with each GPU consuming 700W TDP. The facility's current power infrastructure supports 15 kW per rack. Which power density approach enables safe deployment while maintaining optimal NVLink performance?",
       "alternatives": [
@@ -1539,7 +1480,6 @@
     },
     {
       "id": 48,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A production deployment team needs to maximize throughput for LLaMA 70B inference on H100 GPUs while maintaining acceptable accuracy. Which quantization approach using TensorRT-LLM provides the best balance of throughput improvement and model quality for this scenario?",
       "alternatives": [
@@ -1571,7 +1511,6 @@
     },
     {
       "id": 49,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A team evaluates GPU acceleration for their matrix multiplication workload, measuring 100-200x speedup over CPU implementation on H100 GPUs. What is the critical architectural component enabling this performance gain for dense matrix operations?",
       "alternatives": [
@@ -1603,7 +1542,6 @@
     },
     {
       "id": 50,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A team is deploying a production LLM inference service for a GPT-based model with 70B parameters on H100 GPUs. They need to maximize throughput while maintaining low latency for real-time requests. Which specialized hardware unit in the H100 GPU architecture is specifically designed to accelerate the matrix operations required for transformer-based AI workloads?",
       "alternatives": [
@@ -1635,7 +1573,6 @@
     },
     {
       "id": 51,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "What is the purpose of the `nvidia-smi mig -cgi <profile_id> -C` command when working with Multi-Instance GPU (MIG) on NVIDIA H100 GPUs?",
       "alternatives": [
@@ -1667,7 +1604,6 @@
     },
     {
       "id": 52,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying an 8-GPU DGX H100 system for multi-GPU LLM training. During initial benchmarking, you observe peak GPU-to-GPU bandwidth of 900 GB/s during all-reduce operations. Which NVLink configuration enables this bandwidth per H100 GPU?",
       "alternatives": [
@@ -1699,7 +1635,6 @@
     },
     {
       "id": 53,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "What is the primary purpose of using different batch size strategies between training and inference phases in deep learning workflows?",
       "alternatives": [
@@ -1731,7 +1666,6 @@
     },
     {
       "id": 54,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "What is FP8 Tensor Core performance in the context of DGX specifications for AI inference workloads?",
       "alternatives": [
@@ -1763,7 +1697,6 @@
     },
     {
       "id": 55,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A data center is deploying a cluster of eight H100 GPUs per node for continuous LLM training workloads, with each GPU generating 700W of heat. The facility needs to maximize cooling efficiency while minimizing operational costs. Which cooling solution most effectively addresses the thermal requirements for high-power GPU clusters?",
       "alternatives": [
@@ -1795,7 +1728,6 @@
     },
     {
       "id": 56,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "Your team is deploying a DGX H100 system for multi-stage LLM inference pipelines that require concurrent CPU-intensive preprocessing (tokenization, data validation) alongside GPU inference. The preprocessing handles 50,000 requests/second with complex regex patterns. Which CPU configuration aspect of the dual Intel Xeon 8480C processors best supports this workload?",
       "alternatives": [
@@ -1827,7 +1759,6 @@
     },
     {
       "id": 57,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "A global e-commerce company needs to analyze customer reviews in real-time to detect negative sentiment, automatically route support tickets, and provide multilingual customer service responses. Which NLP application would be MOST effective for addressing all three requirements simultaneously?",
       "alternatives": [
@@ -1859,7 +1790,6 @@
     },
     {
       "id": 58,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A Kubernetes cluster administrator needs to automate deployment of NVIDIA GPU drivers, Container Toolkit, device plugins, and DCGM monitoring across all GPU-enabled nodes. Which technology provides this integrated capability for automated deployment and lifecycle management?",
       "alternatives": [
@@ -1891,7 +1821,6 @@
     },
     {
       "id": 59,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "What is desktop density in the context of NVIDIA vGPU technology?",
       "alternatives": [
@@ -1923,7 +1852,6 @@
     },
     {
       "id": 60,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "Your AI training pipeline experiences CPU bottlenecks when loading large datasets from NVMe storage to H100 GPUs. Training throughput is limited by PCIe bandwidth through the host CPU. Which technology most effectively eliminates this bottleneck for direct NVMe-to-GPU data transfers?",
       "alternatives": [
@@ -1955,7 +1883,6 @@
     },
     {
       "id": 61,
-      "simulado": 1,
       "domain": "Introduction to AI",
       "question": "What is the primary purpose of the two BlueField-3 DPUs included in the DGX H100 system?",
       "alternatives": [
@@ -1987,7 +1914,6 @@
     },
     {
       "id": 62,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A team is training a 70B parameter LLM on an 8x H100 cluster using mixed precision (FP16). Each H100 has 80GB memory, but training crashes with OOM errors despite model weights requiring only 140GB. What is the critical memory component causing this limitation?",
       "alternatives": [
@@ -2019,7 +1945,6 @@
     },
     {
       "id": 63,
-      "simulado": 1,
       "domain": "AI Operations",
       "question": "A financial services company deploys GPU servers for fraud detection workloads requiring encrypted data transmission, stateful firewall protection, and optimized network performance. They want to offload these infrastructure tasks from CPUs to maintain maximum GPU utilization. Which BlueField DPU approach best achieves encryption, firewall, and TCP/IP processing offload?",
       "alternatives": [
@@ -2051,7 +1976,6 @@
     },
     {
       "id": 64,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "Your team runs distributed LLM training jobs on an 8-node cluster where each node has 8x H100 GPUs connected via NVLink Switch. Jobs frequently span multiple nodes using NCCL for all-reduce operations. When would NVLink-aware scheduling in Slurm most improve training performance?",
       "alternatives": [
@@ -2083,7 +2007,6 @@
     },
     {
       "id": 65,
-      "simulado": 1,
       "domain": "AI Infrastructure",
       "question": "A production AI cluster running multi-node LLM training on H100 GPUs experiences intermittent slowdowns. The operations team needs to quickly diagnose GPU health issues and monitor real-time metrics from the command line across all nodes. Which tool provides the most efficient approach for this scenario?",
       "alternatives": [
@@ -2115,7 +2038,6 @@
     },
     {
       "id": 66,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A team is evaluating three solutions: a rule-based system using decision trees for email routing, a random forest model predicting customer churn, and a convolutional neural network for image classification. Which statement correctly categorizes these solutions within the AI hierarchy?",
       "alternatives": [
@@ -2147,7 +2069,6 @@
     },
     {
       "id": 67,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the bandwidth capability of NDR (Next Data Rate) InfiniBand per port in AI infrastructure deployments?",
       "alternatives": [
@@ -2179,7 +2100,6 @@
     },
     {
       "id": 68,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "An organization is designing a 64-node DGX H100 cluster for distributed LLM training. Compare three approaches: (A) 200 Gbps InfiniBand HDR with GPUDirect RDMA, (B) 400 Gbps Ethernet RoCE v2, (C) 100 Gbps Ethernet with TCP/IP stack. Which approach provides optimal performance for NCCL all-reduce operations?",
       "alternatives": [
@@ -2211,7 +2131,6 @@
     },
     {
       "id": 69,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A DGX SuperPOD Scalable Unit is consistently delivering only 0.7 ExaFLOPS instead of the expected 1 ExaFLOP at FP8 precision during large-scale LLM training. Monitoring shows all 32 DGX H100 systems are active with healthy NVLink connectivity. What is the most likely root cause?",
       "alternatives": [
@@ -2243,7 +2162,6 @@
     },
     {
       "id": 70,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A Kubernetes administrator needs to automate GPU driver installation, CUDA toolkit deployment, and container runtime configuration across a 50-node cluster with mixed H100 and A100 GPUs. Which approach achieves comprehensive GPU stack automation via a single Helm chart deployment?",
       "alternatives": [
@@ -2275,7 +2193,6 @@
     },
     {
       "id": 71,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "Your team is deploying a credit approval LLM to production using Triton Inference Server on H100 GPUs. To ensure responsible deployment with ethical monitoring of model behavior, which technology should you integrate for tracking prediction fairness and bias detection in real-time?",
       "alternatives": [
@@ -2307,7 +2224,6 @@
     },
     {
       "id": 72,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "Your organization plans to deploy a next-generation AI infrastructure in Q2 2026 for training multimodal foundation models exceeding 500B parameters with native FP4 precision support. When would you select NVIDIA Blackwell B200 GPUs for this architecture?",
       "alternatives": [
@@ -2339,7 +2255,6 @@
     },
     {
       "id": 73,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a multi-tenant AI cluster with 8x H100 GPUs per node using Slurm. Users need to request specific GPU counts and types for their training jobs. Which Slurm configuration approach enables users to request GPUs as consumable resources with proper accounting and allocation tracking?",
       "alternatives": [
@@ -2371,7 +2286,6 @@
     },
     {
       "id": 74,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a recommendation system that performs large-scale matrix multiplications on 100,000x100,000 embedding matrices for real-time user predictions. The current CPU-based implementation takes 450ms per prediction, exceeding your 50ms latency SLA. Which approach would MOST effectively reduce inference latency?",
       "alternatives": [
@@ -2403,7 +2317,6 @@
     },
     {
       "id": 75,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your AI operations team needs to continuously monitor GPU health metrics across a 16-node H100 cluster, tracking utilization, temperature, power consumption, and ECC errors for predictive maintenance. Which technology provides the most comprehensive solution for collecting these metrics with minimal performance overhead?",
       "alternatives": [
@@ -2435,7 +2348,6 @@
     },
     {
       "id": 76,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "An administrator runs 'dcgmi health -g 0 -c' to check GPU health on an H100 system, but receives \"Error: No watches are currently active for group 0.\" The GPU is visible in 'nvidia-smi' and DCGM hostengine is running. What is the most likely cause of this error?",
       "alternatives": [
@@ -2467,7 +2379,6 @@
     },
     {
       "id": 77,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "What is computer vision in the context of AI applications?",
       "alternatives": [
@@ -2499,7 +2410,6 @@
     },
     {
       "id": 78,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "What is the primary advantage of using Helm to deploy the NVIDIA GPU Operator in Kubernetes clusters?",
       "alternatives": [
@@ -2531,7 +2441,6 @@
     },
     {
       "id": 79,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A development team needs access to optimized AI containers with the latest framework versions and security patches without managing container builds. Which NVIDIA resource provides pre-configured containers with monthly updates for production deployment?",
       "alternatives": [
@@ -2563,7 +2472,6 @@
     },
     {
       "id": 80,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your multi-node H100 cluster experiences 15-microsecond latency for GPU-to-GPU communication across nodes during distributed training, significantly degrading NCCL all-reduce performance. The cluster uses InfiniBand HDR (200 Gbps) networking. What is the critical component missing to achieve sub-5 microsecond latency?",
       "alternatives": [
@@ -2595,7 +2503,6 @@
     },
     {
       "id": 81,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of the dual Intel Xeon 8480C processors in the DGX H100 system configuration?",
       "alternatives": [
@@ -2627,7 +2534,6 @@
     },
     {
       "id": 82,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "What is the primary purpose of DCGM Exporter in a Kubernetes environment running GPU workloads?",
       "alternatives": [
@@ -2659,7 +2565,6 @@
     },
     {
       "id": 83,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "Your multi-node H100 cluster experiences bottlenecks during distributed LLM training, with CPU memory becoming saturated during GPU-to-GPU data transfers across nodes. The training uses NCCL over InfiniBand. Which optimization would provide approximately 10x performance improvement for inter-node GPU communication?",
       "alternatives": [
@@ -2691,7 +2596,6 @@
     },
     {
       "id": 84,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A team is deploying a 16-node H100 cluster for training a 175B parameter LLM using 3D parallelism with NCCL. During profiling, they observe GPU utilization drops to 45% during gradient synchronization phases. Which network configuration best addresses this bandwidth bottleneck?",
       "alternatives": [
@@ -2723,7 +2627,6 @@
     },
     {
       "id": 85,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A global e-commerce company needs to deploy a solution that can handle customer support inquiries in 15 languages, analyze customer sentiment from product reviews, and provide automated responses to common questions. Which NLP approach best addresses all three requirements simultaneously?",
       "alternatives": [
@@ -2755,7 +2658,6 @@
     },
     {
       "id": 86,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a multi-GPU training cluster for large language models and needs to evaluate memory bandwidth capabilities. Which technology specification enables the H100 GPU to achieve superior memory throughput compared to previous generations?",
       "alternatives": [
@@ -2787,7 +2689,6 @@
     },
     {
       "id": 87,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A data center operator compares three approaches for optimizing PUE: deploying liquid cooling for H100 clusters, implementing hot-aisle containment with air cooling, and upgrading to high-efficiency UPS systems. Current PUE is 1.8 with air-cooled A100s consuming 400kW GPU power and 320kW cooling overhead. Which approach delivers optimal PUE improvement and sustainability impact?",
       "alternatives": [
@@ -2819,7 +2720,6 @@
     },
     {
       "id": 88,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Which statement best describes the interconnect technologies used for intra-node versus inter-node GPU communication in NVIDIA AI infrastructure?",
       "alternatives": [
@@ -2851,7 +2751,6 @@
     },
     {
       "id": 89,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A company deploys a LLaMA 70B model for production inference and needs to maximize throughput while maintaining acceptable accuracy. Which NVIDIA technology best enables lower precision INT8/FP8 quantization to increase inference throughput on H100 GPUs?",
       "alternatives": [
@@ -2883,7 +2782,6 @@
     },
     {
       "id": 90,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A machine learning team is training a 65B parameter LLM on a DGX H100 system with 8 GPUs using tensor parallelism. They need to minimize GPU-to-GPU communication latency for model layer distribution within the same node. Which interconnect technology should they use for optimal performance?",
       "alternatives": [
@@ -2915,7 +2813,6 @@
     },
     {
       "id": 91,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A team training a computer vision model on H100 GPUs notices GPU utilization at 65% with frequent idle periods during data loading. They want to increase batch size and implement data prefetching to maximize GPU throughput. Which NVIDIA technology should they use to optimize the data pipeline?",
       "alternatives": [
@@ -2947,7 +2844,6 @@
     },
     {
       "id": 92,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A team is deploying an H100 cluster for LLM training and needs to estimate memory requirements. Beyond model weights, which components require the most additional GPU memory during training compared to inference?",
       "alternatives": [
@@ -2979,7 +2875,6 @@
     },
     {
       "id": 93,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A team needs to deploy NGC PyTorch containers across AWS, Azure, and GCP for distributed LLM fine-tuning. Compare three approaches: (A) pulling NGC containers directly from nvcr.io on each cloud, (B) replicating NGC containers to each cloud provider's native registry, (C) using cloud marketplace NGC subscriptions. Which approach optimizes for consistent versioning and network egress costs?",
       "alternatives": [
@@ -3011,7 +2906,6 @@
     },
     {
       "id": 94,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A research team is processing 10,000 independent image classification tasks simultaneously, with each task requiring identical operations on different data. Which hardware architecture is MOST effective for this workload, and why?",
       "alternatives": [
@@ -3043,7 +2937,6 @@
     },
     {
       "id": 95,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A DGX SuperPOD Scalable Unit is experiencing 15% performance degradation during multi-node training jobs. Monitoring shows all 32 DGX H100 systems are operational, but GPU utilization across the 256 GPUs is uneven, with 24 GPUs showing consistently lower activity. What is the most likely cause?",
       "alternatives": [
@@ -3075,7 +2968,6 @@
     },
     {
       "id": 96,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of resource isolation in NVIDIA Multi-Instance GPU (MIG) technology?",
       "alternatives": [
@@ -3107,7 +2999,6 @@
     },
     {
       "id": 97,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "What bandwidth does InfiniBand connectivity provide in DGX SuperPOD systems using ConnectX-7 adapters?",
       "alternatives": [
@@ -3139,7 +3030,6 @@
     },
     {
       "id": 98,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Which statement best describes the primary difference between supervised, unsupervised, and reinforcement learning?",
       "alternatives": [
@@ -3171,7 +3061,6 @@
     },
     {
       "id": 99,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of a Baseboard Management Controller (BMC) in AI infrastructure servers?",
       "alternatives": [
@@ -3203,7 +3092,6 @@
     },
     {
       "id": 100,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A data center is deploying a cluster of H100 GPUs for LLM training, with each rack containing 32 GPUs. Power density reaches 45 kW per rack. Which cooling technology is MOST effective for managing this high-density AI server configuration?",
       "alternatives": [
@@ -3235,7 +3123,6 @@
     },
     {
       "id": 101,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "A healthcare AI team discovers their diagnostic model underperforms for minority patient groups due to imbalanced training data. Which tool is BEST for systematically identifying and quantifying bias patterns across demographic segments before retraining?",
       "alternatives": [
@@ -3267,7 +3154,6 @@
     },
     {
       "id": 102,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A financial services company is deploying a Kubernetes cluster with stringent security requirements including per-container IPsec encryption, stateful firewall inspection, and TCP connection offload to free CPU resources for trading algorithms. Which technology would best handle these infrastructure offloads while maintaining GPU compute availability?",
       "alternatives": [
@@ -3299,7 +3185,6 @@
     },
     {
       "id": 103,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary security benefit of hardware-accelerated encryption on NVIDIA BlueField DPUs?",
       "alternatives": [
@@ -3331,7 +3216,6 @@
     },
     {
       "id": 104,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A research team is deploying a DGX H100 system for training a 175B parameter language model with mixed precision. They need to verify the total GPU memory capacity available across all GPUs in the system. Which configuration achieves the 640GB total HBM3 memory specification?",
       "alternatives": [
@@ -3363,7 +3247,6 @@
     },
     {
       "id": 105,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "A media production studio requires a single GPU solution for real-time ray tracing, AI video upscaling, and running LLM inference for content generation workflows. They need to consolidate rendering and inference workloads on the same infrastructure. What is the critical component of the Ada Lovelace L40S that enables this hybrid professional visualization and inference deployment?",
       "alternatives": [
@@ -3395,7 +3278,6 @@
     },
     {
       "id": 106,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A healthcare AI system processes patient medical records for diagnosis prediction. Which technology should be implemented to protect sensitive patient information while allowing the model to train on real data without exposing individual records?",
       "alternatives": [
@@ -3427,7 +3309,6 @@
     },
     {
       "id": 107,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "After implementing a dedicated out-of-band management network for your DGX H100 cluster, administrators report intermittent inability to access BMC interfaces during production LLM training workloads, despite successful ping tests to BMC IPs. The in-band production network shows normal operation. What is the most likely cause?",
       "alternatives": [
@@ -3459,7 +3340,6 @@
     },
     {
       "id": 108,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A data center supports mixed workloads: AI inference applications requiring CUDA acceleration, VDI users running CAD software, and knowledge workers using office applications. Which vGPU profile series combination best addresses these three distinct use cases?",
       "alternatives": [
@@ -3491,7 +3371,6 @@
     },
     {
       "id": 109,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your datacenter is deploying 32 H200 GPUs (each 700W TDP) in a single rack for continuous LLM training. Compare direct-to-chip liquid cooling, rear-door heat exchangers, and immersion cooling for this deployment. Which approach optimally balances thermal management, reliability, and operational complexity?",
       "alternatives": [
@@ -3523,7 +3402,6 @@
     },
     {
       "id": 110,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your team is deploying a multi-GPU training cluster using DGX H100 systems for LLM pre-training. The training job requires intensive gradient synchronization across all 8 GPUs within each node. Which interconnect configuration achieves the maximum 900 GB/s bidirectional bandwidth per H100 GPU for optimal all-reduce performance?",
       "alternatives": [
@@ -3555,7 +3433,6 @@
     },
     {
       "id": 111,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "Your team is deploying a multi-node H100 cluster with InfiniBand HDR networking for training a 150B parameter LLM using NCCL. When would GPUDirect RDMA provide the most significant performance benefit?",
       "alternatives": [
@@ -3587,7 +3464,6 @@
     },
     {
       "id": 112,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A team is developing an image classification system that must automatically learn hierarchical feature representations from raw pixel data without manual feature engineering. The model needs to identify edges, textures, and complex object patterns at different abstraction levels. Which approach best suits these requirements?",
       "alternatives": [
@@ -3619,7 +3495,6 @@
     },
     {
       "id": 113,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A DGX H100 system requires infrastructure offload for storage networking, security processing, and telemetry collection. Two deployment approaches are proposed: (A) using both BlueField-3 DPUs in active-active mode with workload distribution, or (B) configuring one DPU for primary operations with the second as hot-standby failover. Which approach optimally utilizes the 2 BlueField-3 DPUs?",
       "alternatives": [
@@ -3651,7 +3526,6 @@
     },
     {
       "id": 114,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "What are the four distinct network fabrics implemented in NVIDIA DGX SuperPOD architecture?",
       "alternatives": [
@@ -3683,7 +3557,6 @@
     },
     {
       "id": 115,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "What is the primary difference in batch size strategy between training and inference workloads on NVIDIA GPUs?",
       "alternatives": [
@@ -3715,7 +3588,6 @@
     },
     {
       "id": 116,
-      "simulado": 2,
       "domain": "Introduction to AI",
       "question": "A healthcare AI system denies insurance claims automatically. Regulators demand documentation showing how decisions are made and who is accountable for errors. Which AI transparency approach BEST addresses both explainability and accountability requirements?",
       "alternatives": [
@@ -3747,7 +3619,6 @@
     },
     {
       "id": 117,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "Your team is training a neural network for image classification. The model shows high training loss after the first epoch. Which approach uses iterative weight updates via backpropagation to minimize this loss over subsequent epochs?",
       "alternatives": [
@@ -3779,7 +3650,6 @@
     },
     {
       "id": 118,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "Your team is deploying a DGX H100 system for training a 175B parameter LLM using 3D parallelism across all 8 GPUs. The model requires frequent all-reduce operations and direct GPU-to-GPU memory transfers during tensor parallel layers. When would NVSwitch integration be most critical for this workload?",
       "alternatives": [
@@ -3811,7 +3681,6 @@
     },
     {
       "id": 119,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "During LLM training on an 8x H100 DGX system, GPU utilization averages 45% with frequent idle periods. Profiling shows GPUs waiting between training steps while CPU usage peaks at 95%. In this scenario, which approach most effectively identifies the CPU bottleneck causing low GPU utilization?",
       "alternatives": [
@@ -3843,7 +3712,6 @@
     },
     {
       "id": 120,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the CUDA platform in the context of NVIDIA's software stack for AI workloads?",
       "alternatives": [
@@ -3875,7 +3743,6 @@
     },
     {
       "id": 121,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "Your organization plans to deploy a new data center infrastructure for training large language models with 100B+ parameters using multi-node distributed training. The project requires the latest GPU architecture optimized for FP8 precision and maximum inter-GPU bandwidth. Which GPU should you select?",
       "alternatives": [
@@ -3907,7 +3774,6 @@
     },
     {
       "id": 122,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "What is the primary purpose of JupyterLab integration in NVIDIA Base Command Manager?",
       "alternatives": [
@@ -3939,7 +3805,6 @@
     },
     {
       "id": 123,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "Your cluster has nodes with 8x H100 GPUs connected via NVLink Switch, and nodes with 4x A100 GPUs with direct NVLink pairs. A user submits a distributed training job requiring 4 GPUs with high inter-GPU bandwidth. In Slurm, which approach achieves topology-aware job placement to maximize NVLink utilization?",
       "alternatives": [
@@ -3971,7 +3836,6 @@
     },
     {
       "id": 124,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A team is deploying a production LLM inference service for a 70B parameter model requiring <100ms latency and 1000 requests/hour. They're comparing three cloud GPU approaches: (A) 4x L40S with TensorRT-LLM tensor parallelism, (B) 2x H100 with TensorRT-LLM and continuous batching, (C) 8x A10 with model sharding across instances. Which approach optimally balances performance and cost?",
       "alternatives": [
@@ -4003,7 +3867,6 @@
     },
     {
       "id": 125,
-      "simulado": 2,
       "domain": "AI Operations",
       "question": "What is the standard GPU configuration in an NVIDIA DGX H100 system?",
       "alternatives": [
@@ -4035,7 +3898,6 @@
     },
     {
       "id": 126,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of experiment tracking in MLOps when versioning models and experiments?",
       "alternatives": [
@@ -4067,7 +3929,6 @@
     },
     {
       "id": 127,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary purpose of the H100's 3.35 TB/s memory bandwidth achieved through HBM3?",
       "alternatives": [
@@ -4099,7 +3960,6 @@
     },
     {
       "id": 128,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is storage acceleration in the context of BlueField DPU?",
       "alternatives": [
@@ -4131,7 +3991,6 @@
     },
     {
       "id": 129,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "A data science team is developing a custom convolutional neural network for medical image classification using PyTorch on H100 GPUs. They need to accelerate convolution, pooling, and activation operations. Which library should they leverage for GPU-accelerated primitives?",
       "alternatives": [
@@ -4163,7 +4022,6 @@
     },
     {
       "id": 130,
-      "simulado": 2,
       "domain": "AI Infrastructure",
       "question": "What is the primary scenario where InfiniBand should be chosen over Ethernet for AI infrastructure deployments?",
       "alternatives": [

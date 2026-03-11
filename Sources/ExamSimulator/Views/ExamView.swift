@@ -131,10 +131,6 @@ struct ExamView: View {
                 .foregroundStyle(Color.accentColor)
                 .clipShape(Capsule())
 
-            Text("Simulado \(question.simulado)")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-
             Spacer()
 
             Button {

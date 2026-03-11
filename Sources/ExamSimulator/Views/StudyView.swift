@@ -85,7 +85,7 @@ struct StudyView: View {
                 .foregroundStyle(Color.accentColor)
                 .clipShape(Capsule())
 
-            Text("Simulado \(question.simulado) · #\(question.id)")
+            Text("#\(question.id)")
                 .font(.caption)
                 .foregroundStyle(.secondary)
 

@@ -19,7 +19,6 @@ public struct ExamBankMetadata: Codable, Hashable {
     public let source: String
     public let format: String
     public let totalQuestions: Int
-    public let simulados: [SimuladoInfo]
     public let domains: [DomainInfo]
     /// Minimum passing score (0–100). Defaults to 70.0 if absent in JSON.
     public var passingScorePercent: Double
@@ -27,20 +26,19 @@ public struct ExamBankMetadata: Codable, Hashable {
     enum CodingKeys: String, CodingKey {
         case title, certification, source, format
         case totalQuestions = "total_questions"
-        case simulados, domains
+        case domains
         case passingScorePercent = "passing_score_percent"
     }
 
     // Custom decoder so legacy JSON files without `passing_score_percent` use 70.0.
     public init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        title               = try c.decode(String.self,          forKey: .title)
-        certification       = try c.decode(String.self,          forKey: .certification)
-        source              = try c.decode(String.self,          forKey: .source)
-        format              = try c.decode(String.self,          forKey: .format)
-        totalQuestions      = try c.decode(Int.self,             forKey: .totalQuestions)
-        simulados           = try c.decode([SimuladoInfo].self,  forKey: .simulados)
-        domains             = try c.decode([DomainInfo].self,    forKey: .domains)
+        title               = try c.decode(String.self,         forKey: .title)
+        certification       = try c.decode(String.self,         forKey: .certification)
+        source              = try c.decode(String.self,         forKey: .source)
+        format              = try c.decode(String.self,         forKey: .format)
+        totalQuestions      = try c.decode(Int.self,            forKey: .totalQuestions)
+        domains             = try c.decode([DomainInfo].self,   forKey: .domains)
         passingScorePercent = try c.decodeIfPresent(Double.self, forKey: .passingScorePercent) ?? 70.0
     }
 
@@ -51,17 +49,9 @@ public struct ExamBankMetadata: Codable, Hashable {
         try c.encode(source,              forKey: .source)
         try c.encode(format,              forKey: .format)
         try c.encode(totalQuestions,      forKey: .totalQuestions)
-        try c.encode(simulados,           forKey: .simulados)
         try c.encode(domains,             forKey: .domains)
         try c.encode(passingScorePercent, forKey: .passingScorePercent)
     }
-}
-
-public struct SimuladoInfo: Codable, Identifiable, Hashable {
-    public var id: Int { number }
-    public let number: Int
-    public let range: String
-    public let questions: Int
 }
 
 public struct DomainInfo: Codable, Identifiable, Hashable {

@@ -7,12 +7,12 @@ struct ExamEngineFilterTests {
 
     let engine = ExamEngine()
 
-    private func makeQuestion(id: Int, simulado: Int = 1, domain: String, correct: String = "A") -> Question {
+    private func makeQuestion(id: Int, domain: String, correct: String = "A") -> Question {
         let alternatives = ["A", "B", "C", "D"].map { letter in
             Alternative(letter: letter, text: "Option \(letter)", isCorrect: letter == correct)
         }
         return Question(
-            id: id, simulado: simulado, domain: domain,
+            id: id, domain: domain,
             question: "Question \(id)?",
             alternatives: alternatives,
             correctAnswer: correct,
@@ -24,27 +24,17 @@ struct ExamEngineFilterTests {
 
     var sampleQuestions: [Question] {
         [
-            makeQuestion(id: 1, simulado: 1, domain: "Domain A"),
-            makeQuestion(id: 2, simulado: 1, domain: "Domain A"),
-            makeQuestion(id: 3, simulado: 1, domain: "Domain B"),
-            makeQuestion(id: 4, simulado: 2, domain: "Domain B"),
-            makeQuestion(id: 5, simulado: 2, domain: "Domain C"),
+            makeQuestion(id: 1, domain: "Domain A"),
+            makeQuestion(id: 2, domain: "Domain A"),
+            makeQuestion(id: 3, domain: "Domain B"),
+            makeQuestion(id: 4, domain: "Domain B"),
+            makeQuestion(id: 5, domain: "Domain C"),
         ]
     }
 
     @Test func filterAll() {
         let result = engine.filterQuestions(sampleQuestions, filter: .all)
         #expect(result.count == 5)
-    }
-
-    @Test func filterBySimuladoOne() {
-        let result = engine.filterQuestions(sampleQuestions, filter: .bySimulado(1))
-        #expect(result.count == 3)
-    }
-
-    @Test func filterBySimuladoTwo() {
-        let result = engine.filterQuestions(sampleQuestions, filter: .bySimulado(2))
-        #expect(result.count == 2)
     }
 
     @Test func filterByDomain() {
@@ -74,7 +64,7 @@ struct ExamEngineScoringTests {
 
     private func makeQ(_ id: Int, domain: String = "D") -> Question {
         let alts = ["A", "B", "C", "D"].map { Alternative(letter: $0, text: "Opt \($0)", isCorrect: $0 == "A") }
-        return Question(id: id, simulado: 1, domain: domain, question: "Q\(id)?",
+        return Question(id: id, domain: domain, question: "Q\(id)?",
                         alternatives: alts, correctAnswer: "A",
                         explanationEn: "", explanationPtBr: "", note: "")
     }
