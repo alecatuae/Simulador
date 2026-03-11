@@ -64,6 +64,8 @@ struct DashboardView: View {
                     progressRepo: deps.progressRepository,
                     passingScore: ctx.session.config.passingScorePercent
                 ))
+                .environmentObject(loc)
+                .environmentObject(deps)
                 .onDisappear { viewModel.reloadProgress() }
             case .exam(let ctx):
                 ExamView(viewModel: ExamViewModel(
@@ -72,12 +74,15 @@ struct DashboardView: View {
                     progressRepo: deps.progressRepository,
                     passingScore: ctx.session.config.passingScorePercent
                 ))
+                .environmentObject(loc)
+                .environmentObject(deps)
                 .onDisappear { viewModel.reloadProgress() }
             case .browse(let bank):
                 BrowseQuestionsView(
                     viewModel: BrowseQuestionsViewModel(bank: bank, repository: deps.bankRepository)
                 )
                 .environmentObject(loc)
+                .environmentObject(deps)
                 .onDisappear { viewModel.loadData() }
             }
         }

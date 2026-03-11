@@ -8,6 +8,7 @@ struct StudyView: View {
     @Environment(\.dismiss) var dismiss
 
     @State private var showAIPanel = false
+    @State private var showAINotConfigured = false
 
     var body: some View {
         if viewModel.isFinished, let result = viewModel.sessionResult {
@@ -64,16 +65,27 @@ struct StudyView: View {
 
             Spacer()
 
-            if deps.isAIAvailable && viewModel.showExplanation {
+            if viewModel.showExplanation {
                 Button {
-                    withAnimation(.easeInOut(duration: 0.25)) { showAIPanel.toggle() }
+                    if deps.isAIAvailable {
+                        withAnimation(.easeInOut(duration: 0.25)) { showAIPanel.toggle() }
+                    } else {
+                        showAINotConfigured = true
+                    }
                 } label: {
                     Label(loc.t("ai.title"), systemImage: "sparkles")
                         .font(.subheadline)
-                        .foregroundStyle(showAIPanel ? Color.purple : Color.secondary)
+                        .foregroundStyle(
+                            deps.isAIAvailable
+                                ? (showAIPanel ? Color.purple : Color.secondary)
+                                : Color.secondary.opacity(0.5)
+                        )
                 }
                 .buttonStyle(.plain)
-                .help(loc.t("ai.toggle"))
+                .help(deps.isAIAvailable ? loc.t("ai.toggle") : loc.t("ai.notConfigured.hint"))
+                .popover(isPresented: $showAINotConfigured, arrowEdge: .top) {
+                    aiNotConfiguredPopover
+                }
             }
 
             Button {
@@ -179,6 +191,30 @@ struct StudyView: View {
         .padding(.top, 8)
         .transition(.opacity.combined(with: .move(edge: .bottom)))
         .animation(.easeOut(duration: 0.3), value: viewModel.showExplanation)
+    }
+
+    private var aiNotConfiguredPopover: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 8) {
+                Image(systemName: "sparkles")
+                    .foregroundStyle(.purple)
+                Text(loc.t("ai.title"))
+                    .font(.headline)
+            }
+            Text(loc.t("ai.notConfigured.message"))
+                .font(.callout)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            HStack {
+                Spacer()
+                Text(loc.t("ai.notConfigured.hint2"))
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+                    .multilineTextAlignment(.center)
+            }
+        }
+        .padding(16)
+        .frame(width: 280)
     }
 
     private var resultBanner: some View {

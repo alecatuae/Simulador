@@ -164,6 +164,9 @@
     "ai.toggle": "Abrir/fechar painel do Assistente IA",
     "ai.placeholder": "Faça uma pergunta de acompanhamento…",
     "ai.send": "Enviar",
+    "ai.notConfigured.hint": "Assistente IA — configure a chave de API em Configurações (Cmd+,)",
+    "ai.notConfigured.message": "Para usar o Assistente IA, adicione sua chave de API da OpenAI em Configurações.",
+    "ai.notConfigured.hint2": "Abra as Configurações com Cmd+,",
 
     "error.loadFailed": "Falha ao carregar bancos de questões",
     "error.noExams": "Nenhum banco de questões encontrado em Resources/QAs/",

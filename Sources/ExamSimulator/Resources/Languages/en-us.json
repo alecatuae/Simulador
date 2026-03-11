@@ -164,6 +164,9 @@
     "ai.toggle": "Toggle AI Assistant panel",
     "ai.placeholder": "Ask a follow-up question…",
     "ai.send": "Send",
+    "ai.notConfigured.hint": "AI Assistant — configure API key in Settings (Cmd+,)",
+    "ai.notConfigured.message": "To use the AI Assistant, add your OpenAI API key in Settings.",
+    "ai.notConfigured.hint2": "Open Settings with Cmd+,",
 
     "error.loadFailed": "Failed to load exam banks",
     "error.noExams": "No exam banks found in Resources/QAs/",
