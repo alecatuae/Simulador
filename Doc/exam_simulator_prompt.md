@@ -469,7 +469,27 @@ Each question in Study Mode displays after answering:
 -   explanation in English
 -   explanation in Portuguese (toggle)
 -   bookmark feature
--   AI explanation button (disabled in MVP)
+-   **AI Assistant panel** (active when API key is configured)
+
+### AI Assistant Panel (Study Mode & Review Mode)
+
+When an API key is saved in Settings, an **✦ AI Assistant** button
+appears in the toolbar as soon as the explanation section is visible.
+
+Clicking the button opens an inline chat panel below the explanation:
+
+-   **Auto-explain** — on first open, the AI automatically generates a
+    concise explanation of why the correct answer is right and why the
+    other options are wrong, using the question context and the
+    student's selected answer.
+-   **Follow-up chat** — the student can type any follow-up question
+    and get a contextual answer. Full conversation history is
+    maintained for the duration of the question view.
+-   **Panel resets** when navigating to the next/previous question.
+-   The button and panel are hidden when `isAIAvailable = false`
+    (no API key configured).
+
+The same panel is available in **Review Mode** during post-exam review.
 
 ------------------------------------------------------------------------
 
@@ -488,6 +508,8 @@ UserProgress
 
 Persistence: **JSON files** via `ProgressRepository` (not SwiftData).
 Language preference: **UserDefaults** (key: `app.language`).
+OpenAI API key: **UserDefaults** (key: `com.examsimulator.openai.apikey`) —
+managed via Settings screen, never stored in source files.
 
 ------------------------------------------------------------------------
 
@@ -522,11 +544,13 @@ ExamSimulator/                          ← repo root
 │   │   │   ├── ExamSession.swift
 │   │   │   ├── SessionResult.swift
 │   │   │   ├── UserProgress.swift
-│   │   │   └── AppConfig.swift
+│   │   │   ├── AppConfig.swift
+│   │   │   └── ChatMessage.swift          ← AI conversation message model
 │   │   ├── Services/
 │   │   │   ├── AI/
-│   │   │   │   ├── AIProvider.swift
-│   │   │   │   └── MockAIProvider.swift
+│   │   │   │   ├── AIProvider.swift       ← protocol + AIStudyAssistantService facade
+│   │   │   │   ├── MockAIProvider.swift   ← stub (used when no key is set)
+│   │   │   │   └── OpenAIProvider.swift   ← real OpenAI HTTP client
 │   │   │   ├── Localization/
 │   │   │   │   └── LocalizationService.swift
 │   │   │   └── Configuration/
@@ -550,14 +574,16 @@ ExamSimulator/                          ← repo root
 │       │   ├── ExamView.swift
 │       │   ├── ReviewView.swift
 │       │   ├── ResultView.swift
-│       │   └── BrowseQuestionsView.swift
-│       ├── ViewModels/
+│       │   ├── BrowseQuestionsView.swift
+│       │   ├── AIAssistantView.swift          ← inline AI chat panel
+│       │   └── SettingsView.swift             ← macOS Preferences (Cmd+,)
 │       │   ├── DashboardViewModel.swift
 │       │   ├── StudyViewModel.swift
 │       │   ├── ExamViewModel.swift
 │       │   ├── ReviewViewModel.swift
 │       │   └── BrowseQuestionsViewModel.swift
-│       ├── Components/
+│       │   ├── BrowseQuestionsViewModel.swift
+│       │   └── AIAssistantViewModel.swift     ← AI chat state & async calls
 │       │   ├── QuestionCard.swift
 │       │   ├── AlternativeRow.swift
 │       │   ├── TimerView.swift
@@ -565,12 +591,14 @@ ExamSimulator/                          ← repo root
 │       │   └── QuestionNavigatorView.swift
 │       └── Resources/
 │           ├── QAs/
-│           │   └── NCA-AIIO_QA.json
+│           ├── QAs/
+│           │   ├── NCA-AIIO_QA.json
+│           │   └── IT-Fundamentals_QA.json
 │           ├── Languages/
 │           │   ├── en-us.json
 │           │   └── pt-br.json
-│           └── AppConfig.json
-├── Tests/
+│           ├── AppConfig.json                 ← gitignored (local config)
+│           └── AppConfig.template.json        ← committed safe default
 │   └── ExamSimulatorCoreTests/
 │       ├── ExamBankTests.swift
 │       └── ExamEngineTests.swift
@@ -642,6 +670,58 @@ The generated project must include:
 
 ------------------------------------------------------------------------
 
+# AI Assistant
+
+## Architecture
+
+| Component | Location | Responsibility |
+|---|---|---|
+| `AIProvider` protocol | `ExamSimulatorCore/Services/AI/` | Defines the contract for any AI backend |
+| `MockAIProvider` | same | Stub — throws `notConfigured` when no key is present |
+| `OpenAIProvider` | same | Real HTTP client for OpenAI Chat Completions API |
+| `AIStudyAssistantService` | same | Facade that delegates to whichever provider is injected |
+| `ChatMessage` | `ExamSimulatorCore/Models/` | Single message in a conversation (`system/user/assistant`) |
+| `AIAssistantViewModel` | `ExamSimulator/ViewModels/` | Manages chat state, async calls, loading/error |
+| `AIAssistantView` | `ExamSimulator/Views/` | Inline collapsible chat panel |
+| `SettingsView` | `ExamSimulator/Views/` | macOS Preferences window for API key management |
+
+## API Key Flow
+
+1.  User opens **Settings** (`Cmd+,`) → enters OpenAI key (`sk-...`)
+2.  Key is saved to `UserDefaults` (key: `com.examsimulator.openai.apikey`)
+3.  `AppDependencies.isAIAvailable` (a `@Published` flag) updates reactively
+4.  `OpenAIProvider.isAvailable` reads the key via closure — no restart needed
+5.  Key is never written to `AppConfig.json` or any committed file
+
+## AI Panel Behaviour (StudyView / ReviewView)
+
+-   The **✦ AI Assistant** button appears in the toolbar only when:
+    -   `deps.isAIAvailable == true` (API key is set), **and**
+    -   The explanation section is visible (question has been answered)
+-   Clicking the button toggles the inline `AIAssistantView` panel
+-   On first open the panel calls `explain(question:selectedAnswer:)` automatically
+-   Subsequent messages use `chat(messages:question:)` with full history
+-   The panel (and its `AIAssistantViewModel`) resets when navigating to a new question
+    via `.id(question.id)` — SwiftUI recreates the `@StateObject`
+
+## OpenAIProvider
+
+-   Endpoint: `POST {baseURL}/chat/completions` (default: `https://api.openai.com/v1`)
+-   Model: configurable via `AppConfig.json` (`aiProvider.model`, default `gpt-4o-mini`)
+-   `max_tokens`: 600, `temperature`: 0.3
+-   Error handling: API-level errors, HTTP 429 → `rateLimited`, other 4xx/5xx → `requestFailed`
+
+## AppConfig.json — Security
+
+`AppConfig.json` is listed in `.gitignore` to prevent accidental key exposure.
+Use `AppConfig.template.json` as the committed reference with safe defaults.
+To set up locally:
+
+    cp Sources/ExamSimulator/Resources/AppConfig.template.json \
+       Sources/ExamSimulator/Resources/AppConfig.json
+
+------------------------------------------------------------------------
+
 # MVP Scope (Phase 1)
 
 In scope:
@@ -654,12 +734,13 @@ In scope:
 -   Review Mode (post-exam question review)
 -   Progress persistence (JSON files)
 -   Language Packs: en-us, pt-br
--   AIProvider protocol + MockAIProvider stub
+-   AIProvider protocol + MockAIProvider stub + OpenAIProvider (real)
+-   AI Assistant panel in Study Mode and Review Mode
 -   Browse Questions with inline question editor
+-   macOS Settings screen for API key management (`Cmd+,`)
 
 Out of scope (Phase 2):
 
--   Real OpenAI API calls
 -   Historical progress charts
 -   In-app QA file importer (drag-and-drop new bank files)
 -   iOS companion app

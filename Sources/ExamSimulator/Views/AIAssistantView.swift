@@ -219,13 +219,14 @@ private struct DotsLoadingView: View {
                 Circle()
                     .frame(width: 5, height: 5)
                     .foregroundStyle(Color.purple.opacity(phase == i ? 1.0 : 0.3))
+                    .animation(.easeInOut(duration: 0.3), value: phase)
             }
         }
-        .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 0.35, repeats: true) { _ in
-                withAnimation(.easeInOut(duration: 0.3)) {
-                    phase = (phase + 1) % 3
-                }
+        // .task is cancelled automatically when the view disappears — no timer leak.
+        .task {
+            while !Task.isCancelled {
+                try? await Task.sleep(nanoseconds: 350_000_000)
+                phase = (phase + 1) % 3
             }
         }
     }
